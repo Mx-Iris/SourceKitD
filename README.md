@@ -1,3 +1,3 @@
 # SourceKitD
 
-A description of this package.
+This is obtained from `sourcekit-lsp`
