@@ -36,5 +36,9 @@ package typealias Signposter = NonDarwinSignposter
 
 /// The logger that is used to log any messages.
 package var logger: Logger {
-  Logger(subsystem: LoggingScope.subsystem, category: LoggingScope.scope)
+    #if LOGGING
+    Logger(subsystem: LoggingScope.subsystem, category: LoggingScope.scope)
+    #else
+    Logger(.disabled)
+    #endif
 }
