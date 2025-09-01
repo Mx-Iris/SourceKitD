@@ -9,5 +9,3 @@
 // See https://swift.org/CONTRIBUTORS.txt for the list of Swift project authors
 //
 //===----------------------------------------------------------------------===//
-
-// This file is here to prevent the package manager from warning about a target with no sources.

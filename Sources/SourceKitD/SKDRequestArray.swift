@@ -10,19 +10,37 @@
 //
 //===----------------------------------------------------------------------===//
 
-import Csourcekitd
-#if canImport(Glibc)
+package import Csourcekitd
+
+#if canImport(Darwin)
+import Darwin
+#elseif canImport(Glibc)
 import Glibc
+#elseif canImport(Musl)
+import Musl
 #elseif canImport(CRT)
 import CRT
+#elseif canImport(Bionic)
+import Bionic
 #endif
 
-public final class SKDRequestArray {
-  public let array: sourcekitd_object_t?
-  public let sourcekitd: SourceKitD
+extension SourceKitD {
+  /// Create a `SKDRequestArray` from the given array.
+  nonisolated package func array(_ array: [SKDRequestValue]) -> SKDRequestArray {
+    let result = SKDRequestArray(sourcekitd: self)
+    for element in array {
+      result.append(element)
+    }
+    return result
+  }
+}
 
-  public init(_ array: sourcekitd_object_t? = nil, sourcekitd: SourceKitD) {
-    self.array = array ?? sourcekitd.api.request_array_create(nil, 0)
+package final class SKDRequestArray: Sendable {
+  nonisolated(unsafe) let array: sourcekitd_api_object_t
+  private let sourcekitd: SourceKitD
+
+  package init(_ array: sourcekitd_api_object_t? = nil, sourcekitd: SourceKitD) {
+    self.array = array ?? sourcekitd.api.request_array_create(nil, 0)!
     self.sourcekitd = sourcekitd
   }
 
@@ -30,13 +48,40 @@ public final class SKDRequestArray {
     sourcekitd.api.request_release(array)
   }
 
-  public func append(_ value: String) {
-    sourcekitd.api.request_array_set_string(array, -1, value)
+  package func append(_ newValue: SKDRequestValue) {
+    switch newValue {
+    case let newValue as String:
+      sourcekitd.api.request_array_set_string(array, -1, newValue)
+    case let newValue as Int:
+      sourcekitd.api.request_array_set_int64(array, -1, Int64(newValue))
+    case let newValue as sourcekitd_api_uid_t:
+      sourcekitd.api.request_array_set_uid(array, -1, newValue)
+    case let newValue as SKDRequestDictionary:
+      sourcekitd.api.request_array_set_value(array, -1, newValue.dict)
+    case let newValue as SKDRequestArray:
+      sourcekitd.api.request_array_set_value(array, -1, newValue.array)
+    case let newValue as Array<SKDRequestValue>:
+      self.append(sourcekitd.array(newValue))
+    case let newValue as Dictionary<sourcekitd_api_uid_t, SKDRequestValue>:
+      self.append(sourcekitd.dictionary(newValue))
+    case let newValue as Optional<SKDRequestValue>:
+      if let newValue {
+        self.append(newValue)
+      }
+    default:
+      preconditionFailure("Unknown type conforming to SKDRequestValue")
+    }
+  }
+
+  package static func += (array: SKDRequestArray, other: some Sequence<SKDRequestValue>) {
+    for item in other {
+      array.append(item)
+    }
   }
 }
 
 extension SKDRequestArray: CustomStringConvertible {
-  public var description: String {
+  package var description: String {
     let ptr = sourcekitd.api.request_description_copy(array)!
     defer { free(ptr) }
     return String(cString: ptr)

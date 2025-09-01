@@ -10,18 +10,8 @@
 //
 //===----------------------------------------------------------------------===//
 
-import Foundation
-
-import struct TSCBasic.AbsolutePath
-
-extension NSLock {
-  /// NOTE: Keep in sync with SwiftPM's 'Sources/Basics/NSLock+Extensions.swift'
-  internal func withLock<T>(_ body: () throws -> T) rethrows -> T {
-    lock()
-    defer { unlock() }
-    return try body()
-  }
-}
+package import Foundation
+import SKLogging
 
 /// The set of known SourceKitD instances, uniqued by path.
 ///
@@ -32,41 +22,46 @@ extension NSLock {
 /// * To remove an existing instance, use `remove("path")`, but be aware that if there are any other
 ///   references to the instances in the program, it can be resurrected if `getOrAdd` is called with
 ///   the same path. See note on `remove(_:)`
-public final class SourceKitDRegistry {
-
-  /// Mutex protecting mutable state in the registry.
-  let lock: NSLock = NSLock()
+///
+/// `SourceKitDType` is usually `SourceKitD` but can be substituted for a different type for testing purposes.
+package actor SourceKitDRegistry<SourceKitDType: AnyObject> {
 
   /// Mapping from path to active SourceKitD instance.
-  var active: [AbsolutePath: SourceKitD] = [:]
+  private var active: [URL: (pluginPaths: PluginPaths?, sourcekitd: SourceKitDType)] = [:]
 
   /// Instances that have been unregistered, but may be resurrected if accessed before destruction.
-  var cemetary: [AbsolutePath: WeakSourceKitD] = [:]
+  private var cemetery: [URL: (pluginPaths: PluginPaths?, sourcekitd: WeakSourceKitD<SourceKitDType>)] = [:]
 
   /// Initialize an empty registry.
-  public init() {}
-
-  /// The global shared SourceKitD registry.
-  public static var shared: SourceKitDRegistry = SourceKitDRegistry()
+  package init() {}
 
   /// Returns the existing SourceKitD for the given path, or creates it and registers it.
-  public func getOrAdd(
-    _ key: AbsolutePath,
-    create: () throws -> SourceKitD
-  ) rethrows -> SourceKitD {
-    try lock.withLock {
-      if let existing = active[key] {
-        return existing
+  package func getOrAdd(
+    _ key: URL,
+    pluginPaths: PluginPaths?,
+    create: () throws -> SourceKitDType
+  ) async rethrows -> SourceKitDType {
+    if let existing = active[key] {
+      if existing.pluginPaths != pluginPaths {
+        logger.fault(
+          "Already created SourceKitD with plugin paths \(existing.pluginPaths?.forLogging), now requesting incompatible plugin paths \(pluginPaths.forLogging)"
+        )
       }
-      if let resurrected = cemetary[key]?.value {
-        cemetary[key] = nil
-        active[key] = resurrected
-        return resurrected
-      }
-      let newValue = try create()
-      active[key] = newValue
-      return newValue
+      return existing.sourcekitd
     }
+    if let resurrected = cemetery[key], let resurrectedSourcekitD = resurrected.sourcekitd.value {
+      cemetery[key] = nil
+      if resurrected.pluginPaths != pluginPaths {
+        logger.fault(
+          "Already created SourceKitD with plugin paths \(resurrected.pluginPaths?.forLogging), now requesting incompatible plugin paths \(pluginPaths.forLogging)"
+        )
+      }
+      active[key] = (resurrected.pluginPaths, resurrectedSourcekitD)
+      return resurrectedSourcekitD
+    }
+    let newValue = try create()
+    active[key] = (pluginPaths, newValue)
+    return newValue
   }
 
   /// Removes the SourceKitD instance registered for the given path, if any, from the set of active
@@ -76,26 +71,21 @@ public final class SourceKitDRegistry {
   /// is converted to a weak reference until it is no longer referenced anywhere by the program. If
   /// the same path is looked up again before the original service is deinitialized, the original
   /// service is resurrected rather than creating a new instance.
-  public func remove(_ key: AbsolutePath) -> SourceKitD? {
-    lock.withLock {
-      let existing = active.removeValue(forKey: key)
-      if let existing = existing {
-        assert(self.cemetary[key]?.value == nil)
-        cemetary[key] = WeakSourceKitD(value: existing)
-      }
-      return existing
+  package func remove(_ key: URL) -> SourceKitDType? {
+    let existing = active.removeValue(forKey: key)
+    if let existing = existing {
+      assert(self.cemetery[key]?.sourcekitd.value == nil)
+      cemetery[key] = (existing.pluginPaths, WeakSourceKitD(value: existing.sourcekitd))
     }
-  }
-
-  /// Remove all SourceKitD instances, including weak ones.
-  public func clear() {
-    lock.withLock {
-      active.removeAll()
-      cemetary.removeAll()
-    }
+    return existing?.sourcekitd
   }
 }
 
-struct WeakSourceKitD {
-  weak var value: SourceKitD?
+extension SourceKitDRegistry<SourceKitD> {
+  /// The global shared SourceKitD registry.
+  package static let shared: SourceKitDRegistry = SourceKitDRegistry()
+}
+
+fileprivate struct WeakSourceKitD<SourceKitDType: AnyObject> {
+  weak var value: SourceKitDType?
 }

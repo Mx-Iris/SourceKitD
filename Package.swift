@@ -1,20 +1,30 @@
-// swift-tools-version: 5.7
+// swift-tools-version: 6.1
 // The swift-tools-version declares the minimum version of Swift required to build this package.
 
+import Foundation
 import PackageDescription
+
+var globalSwiftSettings: [SwiftSetting] {
+    let result: [SwiftSetting] = [
+        .enableUpcomingFeature("InternalImportsByDefault"),
+        .enableUpcomingFeature("MemberImportVisibility"),
+    ]
+    return result
+}
 
 let package = Package(
     name: "SourceKitD",
+    platforms: [
+        .macOS(.v13)
+    ],
     products: [
-        // Products define the executables and libraries a package produces, and make them visible to other packages.
         .library(
             name: "SourceKitD",
             targets: ["SourceKitD"]
         ),
-
     ],
     dependencies: [
-        .package(url: "https://github.com/apple/swift-tools-support-core.git", branch: "main"),
+        .package(url: "https://github.com/apple/swift-crypto.git", from: "3.0.0"),
     ],
     targets: [
         // SourceKitD: Swift bindings for sourcekitd.
@@ -22,35 +32,36 @@ let package = Package(
             name: "SourceKitD",
             dependencies: [
                 "Csourcekitd",
-                "LSPLogging",
-                "SKSupport",
-                .product(name: "SwiftToolsSupport-auto", package: "swift-tools-support-core"),
+                "SKLogging",
+                "SwiftExtensions",
             ],
-            exclude: ["CMakeLists.txt"]
+            exclude: ["CMakeLists.txt", "sourcekitd_uids.swift.gyb"],
+            swiftSettings: globalSwiftSettings
         ),
-
-        // Csourcekitd: C modules wrapper for sourcekitd.
+        .target(
+            name: "SKLogging",
+            dependencies: [
+                "SwiftExtensions",
+                .product(name: "Crypto", package: "swift-crypto"),
+            ],
+            exclude: ["CMakeLists.txt"],
+            swiftSettings: globalSwiftSettings
+        ),
+        .target(
+            name: "SwiftExtensions",
+            dependencies: ["CAtomics"],
+            exclude: ["CMakeLists.txt"],
+            swiftSettings: globalSwiftSettings
+        ),
         .target(
             name: "Csourcekitd",
             dependencies: [],
             exclude: ["CMakeLists.txt"]
         ),
 
-        // Logging support used in LSP modules.
         .target(
-            name: "LSPLogging",
-            dependencies: [],
-            exclude: ["CMakeLists.txt"]
-        ),
-        
-        // SKSupport: Data structures, algorithms and platform-abstraction code that might be generally
-        // useful to any Swift package. Similar in spirit to SwiftPM's Basic module.
-        .target(
-            name: "SKSupport",
-            dependencies: [
-                .product(name: "SwiftToolsSupport-auto", package: "swift-tools-support-core"),
-            ],
-            exclude: ["CMakeLists.txt"]
+            name: "CAtomics",
+            dependencies: []
         ),
     ]
 )
