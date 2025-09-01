@@ -10,7 +10,7 @@
 //
 //===----------------------------------------------------------------------===//
 
-package import Foundation
+import Foundation
 
 #if !NO_CRYPTO_DEPENDENCY
 import Crypto
@@ -18,7 +18,7 @@ import Crypto
 
 /// An object that can printed for logging and also offers a redacted description
 /// when logging in contexts in which private information shouldn't be captured.
-package protocol CustomLogStringConvertible: CustomStringConvertible, Sendable {
+public protocol CustomLogStringConvertible: CustomStringConvertible, Sendable {
   /// A full description of the object.
   var description: String { get }
 
@@ -33,14 +33,14 @@ package protocol CustomLogStringConvertible: CustomStringConvertible, Sendable {
 /// There currently is no way to get equivalent functionality in pure Swift. We
 /// thus pass this object to OSLog, which just forwards to `description` or
 /// `redactedDescription` of an object that implements `CustomLogStringConvertible`.
-package final class CustomLogStringConvertibleWrapper: NSObject, Sendable {
+public final class CustomLogStringConvertibleWrapper: NSObject, Sendable {
   private let underlyingObject: any CustomLogStringConvertible
 
   fileprivate init(_ underlyingObject: any CustomLogStringConvertible) {
     self.underlyingObject = underlyingObject
   }
 
-  package override var description: String {
+  public override var description: String {
     return underlyingObject.description
   }
 
@@ -49,7 +49,7 @@ package final class CustomLogStringConvertibleWrapper: NSObject, Sendable {
   // We can't unconditionally mark it as @objc because eg. Linux doesn't have the Objective-C runtime.
   @objc
   #endif
-  package var redactedDescription: String {
+  public var redactedDescription: String {
     underlyingObject.redactedDescription
   }
 }
@@ -58,7 +58,7 @@ extension CustomLogStringConvertible {
   /// Returns an object that can be passed to OSLog, which will print the
   /// `redactedDescription` if logging of private information is disabled and
   /// will log `description` otherwise.
-  package var forLogging: CustomLogStringConvertibleWrapper {
+  public var forLogging: CustomLogStringConvertibleWrapper {
     return CustomLogStringConvertibleWrapper(self)
   }
 }
@@ -66,7 +66,7 @@ extension CustomLogStringConvertible {
 extension String {
   /// A hash value that can be logged in a redacted description without
   /// disclosing any private information about the string.
-  package var hashForLogging: String {
+  public var hashForLogging: String {
     #if NO_CRYPTO_DEPENDENCY
     return "<private>"
     #else
@@ -79,23 +79,23 @@ extension String {
 private struct OptionalWrapper<Wrapped>: CustomLogStringConvertible where Wrapped: CustomLogStringConvertible {
   let optional: Optional<Wrapped>
 
-  package var description: String {
+  public var description: String {
     return optional?.description ?? "<nil>"
   }
 
-  package var redactedDescription: String {
+  public var redactedDescription: String {
     return optional?.redactedDescription ?? "<nil>"
   }
 }
 
 extension Optional where Wrapped: CustomLogStringConvertible {
-  package var forLogging: CustomLogStringConvertibleWrapper {
+  public var forLogging: CustomLogStringConvertibleWrapper {
     return CustomLogStringConvertibleWrapper(OptionalWrapper(optional: self))
   }
 }
 
 extension Encodable {
-  package var prettyPrintedJSON: String {
+  public var prettyPrintedJSON: String {
     let encoder = JSONEncoder()
     encoder.outputFormatting = [.prettyPrinted, .sortedKeys, .withoutEscapingSlashes]
     guard let data = try? encoder.encode(self) else {
@@ -109,7 +109,7 @@ extension Encodable {
     return string.replacingOccurrences(of: "\\/", with: "/")
   }
 
-  package var prettyPrintedRedactedJSON: String {
+  public var prettyPrintedRedactedJSON: String {
     func redact(subject: Any) -> Any {
       if let subject = subject as? [String: Any] {
         return subject.mapValues { redact(subject: $0) }

@@ -10,8 +10,8 @@
 //
 //===----------------------------------------------------------------------===//
 
-package import Csourcekitd
-import SKLogging
+public import Csourcekitd
+public import SKLogging
 
 #if canImport(Darwin)
 import Darwin
@@ -31,7 +31,7 @@ import Bionic
 ///   switch exhaustively over this protocol.
 ///   Do not add new conformances without adding a new case in the subscript and
 ///   `append` function.
-package protocol SKDRequestValue {}
+public protocol SKDRequestValue {}
 
 extension String: SKDRequestValue {}
 extension Int: SKDRequestValue {}
@@ -44,7 +44,7 @@ extension Optional: SKDRequestValue where Wrapped: SKDRequestValue {}
 
 extension SourceKitD {
   /// Create a `SKDRequestDictionary` from the given dictionary.
-  nonisolated package func dictionary(_ dict: [sourcekitd_api_uid_t: SKDRequestValue]) -> SKDRequestDictionary {
+  nonisolated public func dictionary(_ dict: [sourcekitd_api_uid_t: SKDRequestValue]) -> SKDRequestDictionary {
     let result = SKDRequestDictionary(sourcekitd: self)
     for (key, value) in dict {
       result.set(key, to: value)
@@ -53,11 +53,11 @@ extension SourceKitD {
   }
 }
 
-package final class SKDRequestDictionary: Sendable {
+public final class SKDRequestDictionary: Sendable {
   nonisolated(unsafe) let dict: sourcekitd_api_object_t
   private let sourcekitd: SourceKitD
 
-  package init(_ dict: sourcekitd_api_object_t? = nil, sourcekitd: SourceKitD) {
+  public init(_ dict: sourcekitd_api_object_t? = nil, sourcekitd: SourceKitD) {
     self.dict = dict ?? sourcekitd.api.request_dictionary_create(nil, nil, 0)!
     self.sourcekitd = sourcekitd
   }
@@ -66,7 +66,7 @@ package final class SKDRequestDictionary: Sendable {
     sourcekitd.api.request_release(dict)
   }
 
-  package func set(_ key: sourcekitd_api_uid_t, to newValue: SKDRequestValue) {
+  public func set(_ key: sourcekitd_api_uid_t, to newValue: SKDRequestValue) {
     switch newValue {
     case let newValue as String:
       sourcekitd.api.request_dictionary_set_string(dict, key, newValue)
@@ -93,7 +93,7 @@ package final class SKDRequestDictionary: Sendable {
 }
 
 extension SKDRequestDictionary: CustomStringConvertible {
-  package var description: String {
+  public var description: String {
     let ptr = sourcekitd.api.request_description_copy(dict)!
     defer { free(ptr) }
     return String(cString: ptr)
@@ -101,7 +101,7 @@ extension SKDRequestDictionary: CustomStringConvertible {
 }
 
 extension SKDRequestDictionary: CustomLogStringConvertible {
-  package var redactedDescription: String {
+  public var redactedDescription: String {
     // TODO: Implement a better redacted log that contains keys, number of
     // elements in an array but not the data itself.
     // (https://github.com/swiftlang/sourcekit-lsp/issues/1598)

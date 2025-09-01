@@ -10,7 +10,7 @@
 //
 //===----------------------------------------------------------------------===//
 
-package import Csourcekitd
+public import Csourcekitd
 
 #if canImport(Darwin)
 import Darwin
@@ -24,22 +24,22 @@ import CRT
 import Bionic
 #endif
 
-package final class SKDResponseArray: Sendable {
+public final class SKDResponseArray: Sendable {
   private let array: sourcekitd_api_variant_t
   private let resp: SKDResponse
 
-  package var sourcekitd: SourceKitD { return resp.sourcekitd }
+  public var sourcekitd: SourceKitD { return resp.sourcekitd }
 
-  package init(_ array: sourcekitd_api_variant_t, response: SKDResponse) {
+  public init(_ array: sourcekitd_api_variant_t, response: SKDResponse) {
     self.array = array
     self.resp = response
   }
 
-  package var count: Int { return sourcekitd.api.variant_array_get_count(array) }
+  public var count: Int { return sourcekitd.api.variant_array_get_count(array) }
 
   /// If the `applier` returns `false`, iteration terminates.
   @discardableResult
-  package func forEach(_ applier: (Int, SKDResponseDictionary) throws -> Bool) rethrows -> Bool {
+  public func forEach(_ applier: (Int, SKDResponseDictionary) throws -> Bool) rethrows -> Bool {
     for i in 0..<count {
       if try !applier(i, SKDResponseDictionary(sourcekitd.api.variant_array_get_value(array, i), response: resp)) {
         return false
@@ -50,7 +50,7 @@ package final class SKDResponseArray: Sendable {
 
   /// If the `applier` returns `false`, iteration terminates.
   @discardableResult
-  package func forEachUID(_ applier: (Int, sourcekitd_api_uid_t) throws -> Bool) rethrows -> Bool {
+  public func forEachUID(_ applier: (Int, sourcekitd_api_uid_t) throws -> Bool) rethrows -> Bool {
     for i in 0..<count {
       if let uid = sourcekitd.api.variant_array_get_uid(array, i), try !applier(i, uid) {
         return false
@@ -59,7 +59,7 @@ package final class SKDResponseArray: Sendable {
     return true
   }
 
-  package func map<T>(_ transform: (SKDResponseDictionary) throws -> T) rethrows -> [T] {
+  public func map<T>(_ transform: (SKDResponseDictionary) throws -> T) rethrows -> [T] {
     var result: [T] = []
     result.reserveCapacity(self.count)
     try self.forEach { _, element in
@@ -69,7 +69,7 @@ package final class SKDResponseArray: Sendable {
     return result
   }
 
-  package func compactMap<T>(_ transform: (SKDResponseDictionary) throws -> T?) rethrows -> [T] {
+  public func compactMap<T>(_ transform: (SKDResponseDictionary) throws -> T?) rethrows -> [T] {
     var result: [T] = []
     try self.forEach { _, element in
       if let transformed = try transform(element) {
@@ -81,7 +81,7 @@ package final class SKDResponseArray: Sendable {
   }
 
   /// Attempt to access the item at `index` as a string.
-  package subscript(index: Int) -> String? {
+  public subscript(index: Int) -> String? {
     if let cstr = sourcekitd.api.variant_array_get_string(array, index) {
       return String(cString: cstr)
     }
@@ -100,7 +100,7 @@ package final class SKDResponseArray: Sendable {
 }
 
 extension SKDResponseArray: CustomStringConvertible {
-  package var description: String {
+  public var description: String {
     let ptr = sourcekitd.api.variant_description_copy(array)!
     defer { free(ptr) }
     return String(cString: ptr)

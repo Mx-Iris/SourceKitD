@@ -10,10 +10,10 @@
 //
 //===----------------------------------------------------------------------===//
 
-import Csourcekitd
+public import Csourcekitd
 
 extension sourcekitd_api_functions_t {
-  package init(_ sourcekitd: DLHandle) throws {
+  public init(_ sourcekitd: DLHandle) throws {
     func loadRequired<T>(_ symbol: String) throws -> T {
       guard let sym: T = dlsym(sourcekitd, symbol: symbol) else {
         throw SKDError.missingRequiredSymbol(symbol)
@@ -95,7 +95,7 @@ extension sourcekitd_api_functions_t {
 }
 
 extension sourcekitd_ide_api_functions_t {
-  package init(_ sourcekitd: DLHandle) throws {
+  public init(_ sourcekitd: DLHandle) throws {
     func loadRequired<T>(_ symbol: String) throws -> T {
       guard let sym: T = dlsym(sourcekitd, symbol: symbol) else {
         throw SKDError.missingRequiredSymbol(symbol)
@@ -168,7 +168,7 @@ extension sourcekitd_ide_api_functions_t {
 }
 
 extension sourcekitd_plugin_api_functions_t {
-  package init(_ sourcekitd: DLHandle) throws {
+  public init(_ sourcekitd: DLHandle) throws {
     func loadRequired<T>(_ symbol: String) throws -> T {
       guard let sym: T = dlsym(sourcekitd, symbol: symbol) else {
         throw SKDError.missingRequiredSymbol(symbol)
@@ -225,7 +225,7 @@ extension sourcekitd_plugin_api_functions_t {
 }
 
 extension sourcekitd_service_plugin_api_functions_t {
-  package init(_ sourcekitd: DLHandle) throws {
+  public init(_ sourcekitd: DLHandle) throws {
     func loadRequired<T>(_ symbol: String) throws -> T {
       guard let sym: T = dlsym(sourcekitd, symbol: symbol) else {
         throw SKDError.missingRequiredSymbol(symbol)

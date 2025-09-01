@@ -10,9 +10,9 @@
 //
 //===----------------------------------------------------------------------===//
 
-package import Csourcekitd
-package import Foundation
-import SKLogging
+public import Csourcekitd
+public import Foundation
+public import SKLogging
 import SwiftExtensions
 
 extension sourcekitd_api_keys: @unchecked Sendable {}
@@ -55,25 +55,25 @@ fileprivate struct SourceKitDRequestHandle: Sendable {
   nonisolated(unsafe) let handle: sourcekitd_api_request_handle_t
 }
 
-package struct PluginPaths: Equatable, CustomLogStringConvertible {
-  package let clientPlugin: URL
-  package let servicePlugin: URL
+public struct PluginPaths: Equatable, CustomLogStringConvertible {
+  public let clientPlugin: URL
+  public let servicePlugin: URL
 
-  package init(clientPlugin: URL, servicePlugin: URL) {
+  public init(clientPlugin: URL, servicePlugin: URL) {
     self.clientPlugin = clientPlugin
     self.servicePlugin = servicePlugin
   }
 
-  package var description: String {
+  public var description: String {
     "(client: \(clientPlugin), service: \(servicePlugin))"
   }
 
-  var redactedDescription: String {
+    public var redactedDescription: String {
     "(client: \(clientPlugin.description.hashForLogging), service: \(servicePlugin.description.hashForLogging))"
   }
 }
 
-package enum SKDError: Error, Equatable {
+public enum SKDError: Error, Equatable {
   /// The service has crashed.
   case connectionInterrupted
 
@@ -98,28 +98,28 @@ package enum SKDError: Error, Equatable {
 ///
 /// Users of this class should not call the api functions `initialize`, `shutdown`, or
 /// `set_notification_handler`, which are global state managed internally by this class.
-package actor SourceKitD {
+public actor SourceKitD {
   /// The path to the sourcekitd dylib.
-  package let path: URL
+  public let path: URL
 
   /// The handle to the dylib.
   private let dylib: DLHandle
 
   /// The sourcekitd API functions.
-  nonisolated package let api: sourcekitd_api_functions_t
+  nonisolated public let api: sourcekitd_api_functions_t
 
   /// General API for the SourceKit service and client framework, eg. for plugin initialization and to set up custom
   /// variant functions.
   ///
   /// This must not be referenced outside of `SwiftSourceKitPlugin`, `SwiftSourceKitPluginCommon`, or
   /// `SwiftSourceKitClientPlugin`.
-  package nonisolated var pluginApi: sourcekitd_plugin_api_functions_t { try! pluginApiResult.get() }
+  public nonisolated var pluginApi: sourcekitd_plugin_api_functions_t { try! pluginApiResult.get() }
   private let pluginApiResult: Result<sourcekitd_plugin_api_functions_t, Error>
 
   /// The API with which the SourceKit plugin handles requests.
   ///
   /// This must not be referenced outside of `SwiftSourceKitPlugin`.
-  package nonisolated var servicePluginApi: sourcekitd_service_plugin_api_functions_t {
+  public nonisolated var servicePluginApi: sourcekitd_service_plugin_api_functions_t {
     try! servicePluginApiResult.get()
   }
   private let servicePluginApiResult: Result<sourcekitd_service_plugin_api_functions_t, Error>
@@ -127,7 +127,7 @@ package actor SourceKitD {
   /// The API with which the SourceKit plugin communicates with the type-checker in-process.
   ///
   /// This must not be referenced outside of `SwiftSourceKitPlugin`.
-  package nonisolated var ideApi: sourcekitd_ide_api_functions_t { try! ideApiResult.get() }
+  public nonisolated var ideApi: sourcekitd_ide_api_functions_t { try! ideApiResult.get() }
   private let ideApiResult: Result<sourcekitd_ide_api_functions_t, Error>
 
   /// Convenience for accessing known keys.
@@ -135,7 +135,7 @@ package actor SourceKitD {
   /// These need to be computed dynamically so that a client has the chance to register a UID handler between the
   /// initialization of the SourceKit plugin and the first request being handled by it.
   private let _keys: ThreadSafeBox<sourcekitd_api_keys?> = ThreadSafeBox(initialValue: nil)
-  package nonisolated var keys: sourcekitd_api_keys {
+  public nonisolated var keys: sourcekitd_api_keys {
     _keys.computeIfNil { sourcekitd_api_keys(api: self.api) }
   }
 
@@ -144,7 +144,7 @@ package actor SourceKitD {
   /// These need to be computed dynamically so that a client has the chance to register a UID handler between the
   /// initialization of the SourceKit plugin and the first request being handled by it.
   private let _requests: ThreadSafeBox<sourcekitd_api_requests?> = ThreadSafeBox(initialValue: nil)
-  package nonisolated var requests: sourcekitd_api_requests {
+  public nonisolated var requests: sourcekitd_api_requests {
     _requests.computeIfNil { sourcekitd_api_requests(api: self.api) }
   }
 
@@ -153,7 +153,7 @@ package actor SourceKitD {
   /// These need to be computed dynamically so that a client has the chance to register a UID handler between the
   /// initialization of the SourceKit plugin and the first request being handled by it.
   private let _values: ThreadSafeBox<sourcekitd_api_values?> = ThreadSafeBox(initialValue: nil)
-  package nonisolated var values: sourcekitd_api_values {
+  public nonisolated var values: sourcekitd_api_values {
     _values.computeIfNil { sourcekitd_api_values(api: self.api) }
   }
 
@@ -168,7 +168,7 @@ package actor SourceKitD {
   /// List of hooks that should be executed after a request sent to sourcekitd.
   private var requestHandlingHooks: [UUID: (SKDRequestDictionary) -> Void] = [:]
 
-  package static func getOrCreate(
+  public static func getOrCreate(
     dylibPath: URL,
     pluginPaths: PluginPaths?
   ) async throws -> SourceKitD {
@@ -189,7 +189,7 @@ package actor SourceKitD {
     }
   }
 
-  package init(dylib path: URL, pluginPaths: PluginPaths?, initialize: Bool = true) throws {
+  public init(dylib path: URL, pluginPaths: PluginPaths?, initialize: Bool = true) throws {
     #if os(Windows)
     let dlopenModes: DLOpenFlags = []
     #else
@@ -206,7 +206,7 @@ package actor SourceKitD {
 
   /// Create a `SourceKitD` instance from an existing `DLHandle`. `SourceKitD` takes over ownership of the `DLHandler`
   /// and will close it when the `SourceKitD` instance gets deinitialized or if the initializer throws.
-  package init(dlhandle: DLHandle, path: URL, pluginPaths: PluginPaths?, initialize: Bool) throws {
+  public init(dlhandle: DLHandle, path: URL, pluginPaths: PluginPaths?, initialize: Bool) throws {
     do {
       self.path = path
       self.dylib = dlhandle
@@ -258,13 +258,13 @@ package actor SourceKitD {
   }
 
   /// Adds a new notification handler (referenced weakly).
-  package func addNotificationHandler(_ handler: SKDNotificationHandler) {
+  public func addNotificationHandler(_ handler: SKDNotificationHandler) {
     notificationHandlers.removeAll(where: { $0.value == nil })
     notificationHandlers.append(.init(handler))
   }
 
   /// Removes a previously registered notification handler.
-  package func removeNotificationHandler(_ handler: SKDNotificationHandler) {
+  public func removeNotificationHandler(_ handler: SKDNotificationHandler) {
     notificationHandlers.removeAll(where: { $0.value == nil || $0.value === handler })
   }
 
@@ -275,7 +275,7 @@ package actor SourceKitD {
   /// send a request during that time.
   ///
   /// This is intended for testing only.
-  package func withPreRequestHandlingHook(
+  public func withPreRequestHandlingHook(
     body: () async throws -> Void,
     hook: @escaping @Sendable (SKDRequestDictionary) async -> Void
   ) async rethrows {
@@ -299,7 +299,7 @@ package actor SourceKitD {
   /// send a request during that time.
   ///
   /// This is intended for testing only.
-  package func withRequestHandlingHook(
+  public func withRequestHandlingHook(
     body: () async throws -> Void,
     hook: @escaping (SKDRequestDictionary) -> Void
   ) async rethrows {
@@ -360,7 +360,7 @@ package actor SourceKitD {
   ///     declare the request as having timed out.
   ///   - fileContents: The contents of the file that the request operates on. If sourcekitd crashes, the file contents
   ///     will be logged.
-  package func send(
+  public func send(
     _ requestUid: KeyPath<sourcekitd_api_requests, sourcekitd_api_uid_t>,
     _ request: SKDRequestDictionary,
     timeout: Duration,
@@ -468,7 +468,7 @@ package actor SourceKitD {
     return dict
   }
 
-  package func crash() async {
+  public func crash() async {
     _ = try? await send(
       \.crashWithExit,
       dictionary([:]),
@@ -481,7 +481,7 @@ package actor SourceKitD {
 }
 
 /// A sourcekitd notification handler in a class to allow it to be uniquely referenced.
-package protocol SKDNotificationHandler: AnyObject, Sendable {
+public protocol SKDNotificationHandler: AnyObject, Sendable {
   func notification(_: SKDResponse)
 }
 

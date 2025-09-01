@@ -23,9 +23,7 @@ let package = Package(
             targets: ["SourceKitD"]
         ),
     ],
-    dependencies: [
-        .package(url: "https://github.com/apple/swift-crypto.git", from: "3.0.0"),
-    ],
+    dependencies: [],
     targets: [
         // SourceKitD: Swift bindings for sourcekitd.
         .target(
@@ -42,7 +40,6 @@ let package = Package(
             name: "SKLogging",
             dependencies: [
                 "SwiftExtensions",
-                .product(name: "Crypto", package: "swift-crypto"),
             ],
             exclude: ["CMakeLists.txt"],
             swiftSettings: globalSwiftSettings

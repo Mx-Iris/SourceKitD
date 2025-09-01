@@ -10,7 +10,7 @@
 //
 //===----------------------------------------------------------------------===//
 
-package import Foundation
+public import Foundation
 import SKLogging
 
 /// The set of known SourceKitD instances, uniqued by path.
@@ -24,7 +24,7 @@ import SKLogging
 ///   the same path. See note on `remove(_:)`
 ///
 /// `SourceKitDType` is usually `SourceKitD` but can be substituted for a different type for testing purposes.
-package actor SourceKitDRegistry<SourceKitDType: AnyObject> {
+public actor SourceKitDRegistry<SourceKitDType: AnyObject> {
 
   /// Mapping from path to active SourceKitD instance.
   private var active: [URL: (pluginPaths: PluginPaths?, sourcekitd: SourceKitDType)] = [:]
@@ -33,10 +33,10 @@ package actor SourceKitDRegistry<SourceKitDType: AnyObject> {
   private var cemetery: [URL: (pluginPaths: PluginPaths?, sourcekitd: WeakSourceKitD<SourceKitDType>)] = [:]
 
   /// Initialize an empty registry.
-  package init() {}
+  public init() {}
 
   /// Returns the existing SourceKitD for the given path, or creates it and registers it.
-  package func getOrAdd(
+  public func getOrAdd(
     _ key: URL,
     pluginPaths: PluginPaths?,
     create: () throws -> SourceKitDType
@@ -71,7 +71,7 @@ package actor SourceKitDRegistry<SourceKitDType: AnyObject> {
   /// is converted to a weak reference until it is no longer referenced anywhere by the program. If
   /// the same path is looked up again before the original service is deinitialized, the original
   /// service is resurrected rather than creating a new instance.
-  package func remove(_ key: URL) -> SourceKitDType? {
+  public func remove(_ key: URL) -> SourceKitDType? {
     let existing = active.removeValue(forKey: key)
     if let existing = existing {
       assert(self.cemetery[key]?.sourcekitd.value == nil)
@@ -83,7 +83,7 @@ package actor SourceKitDRegistry<SourceKitDType: AnyObject> {
 
 extension SourceKitDRegistry<SourceKitD> {
   /// The global shared SourceKitD registry.
-  package static let shared: SourceKitDRegistry = SourceKitDRegistry()
+  public static let shared: SourceKitDRegistry = SourceKitDRegistry()
 }
 
 fileprivate struct WeakSourceKitD<SourceKitDType: AnyObject> {

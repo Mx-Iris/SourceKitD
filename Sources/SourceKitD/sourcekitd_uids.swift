@@ -12,515 +12,515 @@
 // Automatically Generated From UIDs.swift.gyb.
 // Do Not Edit Directly! To regenerate run Utilities/generate-uids.py
 
-package import Csourcekitd
+public import Csourcekitd
 
-package struct sourcekitd_api_keys {
+public struct sourcekitd_api_keys {
   /// `key.version_major`
-  package let versionMajor: sourcekitd_api_uid_t
+  public let versionMajor: sourcekitd_api_uid_t
   /// `key.version_minor`
-  package let versionMinor: sourcekitd_api_uid_t
+  public let versionMinor: sourcekitd_api_uid_t
   /// `key.version_patch`
-  package let versionPatch: sourcekitd_api_uid_t
+  public let versionPatch: sourcekitd_api_uid_t
   /// `key.results`
-  package let results: sourcekitd_api_uid_t
+  public let results: sourcekitd_api_uid_t
   /// `key.request`
-  package let request: sourcekitd_api_uid_t
+  public let request: sourcekitd_api_uid_t
   /// `key.notification`
-  package let notification: sourcekitd_api_uid_t
+  public let notification: sourcekitd_api_uid_t
   /// `key.kind`
-  package let kind: sourcekitd_api_uid_t
+  public let kind: sourcekitd_api_uid_t
   /// `key.accessibility`
-  package let accessLevel: sourcekitd_api_uid_t
+  public let accessLevel: sourcekitd_api_uid_t
   /// `key.setter_accessibility`
-  package let setterAccessLevel: sourcekitd_api_uid_t
+  public let setterAccessLevel: sourcekitd_api_uid_t
   /// `key.keyword`
-  package let keyword: sourcekitd_api_uid_t
+  public let keyword: sourcekitd_api_uid_t
   /// `key.name`
-  package let name: sourcekitd_api_uid_t
+  public let name: sourcekitd_api_uid_t
   /// `key.usr`
-  package let usr: sourcekitd_api_uid_t
+  public let usr: sourcekitd_api_uid_t
   /// `key.original_usr`
-  package let originalUSR: sourcekitd_api_uid_t
+  public let originalUSR: sourcekitd_api_uid_t
   /// `key.default_implementation_of`
-  package let defaultImplementationOf: sourcekitd_api_uid_t
+  public let defaultImplementationOf: sourcekitd_api_uid_t
   /// `key.interested_usr`
-  package let interestedUSR: sourcekitd_api_uid_t
+  public let interestedUSR: sourcekitd_api_uid_t
   /// `key.generic_params`
-  package let genericParams: sourcekitd_api_uid_t
+  public let genericParams: sourcekitd_api_uid_t
   /// `key.generic_requirements`
-  package let genericRequirements: sourcekitd_api_uid_t
+  public let genericRequirements: sourcekitd_api_uid_t
   /// `key.doc.full_as_xml`
-  package let docFullAsXML: sourcekitd_api_uid_t
+  public let docFullAsXML: sourcekitd_api_uid_t
   /// `key.doc_comment`
-  package let docComment: sourcekitd_api_uid_t
+  public let docComment: sourcekitd_api_uid_t
   /// `key.line`
-  package let line: sourcekitd_api_uid_t
+  public let line: sourcekitd_api_uid_t
   /// `key.column`
-  package let column: sourcekitd_api_uid_t
+  public let column: sourcekitd_api_uid_t
   /// `key.receiver_usr`
-  package let receiverUSR: sourcekitd_api_uid_t
+  public let receiverUSR: sourcekitd_api_uid_t
   /// `key.receivers`
-  package let receivers: sourcekitd_api_uid_t
+  public let receivers: sourcekitd_api_uid_t
   /// `key.is_dynamic`
-  package let isDynamic: sourcekitd_api_uid_t
+  public let isDynamic: sourcekitd_api_uid_t
   /// `key.is_implicit`
-  package let isImplicit: sourcekitd_api_uid_t
+  public let isImplicit: sourcekitd_api_uid_t
   /// `key.filepath`
-  package let filePath: sourcekitd_api_uid_t
+  public let filePath: sourcekitd_api_uid_t
   /// `key.module_interface_name`
-  package let moduleInterfaceName: sourcekitd_api_uid_t
+  public let moduleInterfaceName: sourcekitd_api_uid_t
   /// `key.hash`
-  package let hash: sourcekitd_api_uid_t
+  public let hash: sourcekitd_api_uid_t
   /// `key.severity`
-  package let severity: sourcekitd_api_uid_t
+  public let severity: sourcekitd_api_uid_t
   /// `key.offset`
-  package let offset: sourcekitd_api_uid_t
+  public let offset: sourcekitd_api_uid_t
   /// `key.length`
-  package let length: sourcekitd_api_uid_t
+  public let length: sourcekitd_api_uid_t
   /// `key.sourcefile`
-  package let sourceFile: sourcekitd_api_uid_t
+  public let sourceFile: sourcekitd_api_uid_t
   /// `key.primary_file`
-  package let primaryFile: sourcekitd_api_uid_t
+  public let primaryFile: sourcekitd_api_uid_t
   /// `key.enablesyntaxmap`
-  package let enableSyntaxMap: sourcekitd_api_uid_t
+  public let enableSyntaxMap: sourcekitd_api_uid_t
   /// `key.enablesubstructure`
-  package let enableStructure: sourcekitd_api_uid_t
+  public let enableStructure: sourcekitd_api_uid_t
   /// `key.id`
-  package let id: sourcekitd_api_uid_t
+  public let id: sourcekitd_api_uid_t
   /// `key.description`
-  package let description: sourcekitd_api_uid_t
+  public let description: sourcekitd_api_uid_t
   /// `key.typename`
-  package let typeName: sourcekitd_api_uid_t
+  public let typeName: sourcekitd_api_uid_t
   /// `key.runtime_name`
-  package let runtimeName: sourcekitd_api_uid_t
+  public let runtimeName: sourcekitd_api_uid_t
   /// `key.selector_name`
-  package let selectorName: sourcekitd_api_uid_t
+  public let selectorName: sourcekitd_api_uid_t
   /// `key.annotated_decl`
-  package let annotatedDecl: sourcekitd_api_uid_t
+  public let annotatedDecl: sourcekitd_api_uid_t
   /// `key.fully_annotated_decl`
-  package let fullyAnnotatedDecl: sourcekitd_api_uid_t
+  public let fullyAnnotatedDecl: sourcekitd_api_uid_t
   /// `key.fully_annotated_generic_signature`
-  package let fullyAnnotatedGenericSignature: sourcekitd_api_uid_t
+  public let fullyAnnotatedGenericSignature: sourcekitd_api_uid_t
   /// `key.doc.brief`
-  package let docBrief: sourcekitd_api_uid_t
+  public let docBrief: sourcekitd_api_uid_t
   /// `key.context`
-  package let context: sourcekitd_api_uid_t
+  public let context: sourcekitd_api_uid_t
   /// `key.typerelation`
-  package let typeRelation: sourcekitd_api_uid_t
+  public let typeRelation: sourcekitd_api_uid_t
   /// `key.moduleimportdepth`
-  package let moduleImportDepth: sourcekitd_api_uid_t
+  public let moduleImportDepth: sourcekitd_api_uid_t
   /// `key.num_bytes_to_erase`
-  package let numBytesToErase: sourcekitd_api_uid_t
+  public let numBytesToErase: sourcekitd_api_uid_t
   /// `key.not_recommended`
-  package let notRecommended: sourcekitd_api_uid_t
+  public let notRecommended: sourcekitd_api_uid_t
   /// `key.declarations`
-  package let declarations: sourcekitd_api_uid_t
+  public let declarations: sourcekitd_api_uid_t
   /// `key.enabledeclarations`
-  package let enableDeclarations: sourcekitd_api_uid_t
+  public let enableDeclarations: sourcekitd_api_uid_t
   /// `key.annotations`
-  package let annotations: sourcekitd_api_uid_t
+  public let annotations: sourcekitd_api_uid_t
   /// `key.semantic_tokens`
-  package let semanticTokens: sourcekitd_api_uid_t
+  public let semanticTokens: sourcekitd_api_uid_t
   /// `key.diagnostic_stage`
-  package let diagnosticStage: sourcekitd_api_uid_t
+  public let diagnosticStage: sourcekitd_api_uid_t
   /// `key.syntaxmap`
-  package let syntaxMap: sourcekitd_api_uid_t
+  public let syntaxMap: sourcekitd_api_uid_t
   /// `key.is_system`
-  package let isSystem: sourcekitd_api_uid_t
+  public let isSystem: sourcekitd_api_uid_t
   /// `key.related`
-  package let related: sourcekitd_api_uid_t
+  public let related: sourcekitd_api_uid_t
   /// `key.inherits`
-  package let inherits: sourcekitd_api_uid_t
+  public let inherits: sourcekitd_api_uid_t
   /// `key.conforms`
-  package let conforms: sourcekitd_api_uid_t
+  public let conforms: sourcekitd_api_uid_t
   /// `key.extends`
-  package let extends: sourcekitd_api_uid_t
+  public let extends: sourcekitd_api_uid_t
   /// `key.dependencies`
-  package let dependencies: sourcekitd_api_uid_t
+  public let dependencies: sourcekitd_api_uid_t
   /// `key.entities`
-  package let entities: sourcekitd_api_uid_t
+  public let entities: sourcekitd_api_uid_t
   /// `key.nameoffset`
-  package let nameOffset: sourcekitd_api_uid_t
+  public let nameOffset: sourcekitd_api_uid_t
   /// `key.namelength`
-  package let nameLength: sourcekitd_api_uid_t
+  public let nameLength: sourcekitd_api_uid_t
   /// `key.bodyoffset`
-  package let bodyOffset: sourcekitd_api_uid_t
+  public let bodyOffset: sourcekitd_api_uid_t
   /// `key.bodylength`
-  package let bodyLength: sourcekitd_api_uid_t
+  public let bodyLength: sourcekitd_api_uid_t
   /// `key.docoffset`
-  package let docOffset: sourcekitd_api_uid_t
+  public let docOffset: sourcekitd_api_uid_t
   /// `key.doclength`
-  package let docLength: sourcekitd_api_uid_t
+  public let docLength: sourcekitd_api_uid_t
   /// `key.is_active`
-  package let isActive: sourcekitd_api_uid_t
+  public let isActive: sourcekitd_api_uid_t
   /// `key.is_local`
-  package let isLocal: sourcekitd_api_uid_t
+  public let isLocal: sourcekitd_api_uid_t
   /// `key.inheritedtypes`
-  package let inheritedTypes: sourcekitd_api_uid_t
+  public let inheritedTypes: sourcekitd_api_uid_t
   /// `key.attributes`
-  package let attributes: sourcekitd_api_uid_t
+  public let attributes: sourcekitd_api_uid_t
   /// `key.attribute`
-  package let attribute: sourcekitd_api_uid_t
+  public let attribute: sourcekitd_api_uid_t
   /// `key.elements`
-  package let elements: sourcekitd_api_uid_t
+  public let elements: sourcekitd_api_uid_t
   /// `key.substructure`
-  package let subStructure: sourcekitd_api_uid_t
+  public let subStructure: sourcekitd_api_uid_t
   /// `key.ranges`
-  package let ranges: sourcekitd_api_uid_t
+  public let ranges: sourcekitd_api_uid_t
   /// `key.fixits`
-  package let fixits: sourcekitd_api_uid_t
+  public let fixits: sourcekitd_api_uid_t
   /// `key.generated_buffers`
-  package let generatedBuffers: sourcekitd_api_uid_t
+  public let generatedBuffers: sourcekitd_api_uid_t
   /// `key.buffer_text`
-  package let bufferText: sourcekitd_api_uid_t
+  public let bufferText: sourcekitd_api_uid_t
   /// `key.original_location`
-  package let originalLocation: sourcekitd_api_uid_t
+  public let originalLocation: sourcekitd_api_uid_t
   /// `key.diagnostics`
-  package let diagnostics: sourcekitd_api_uid_t
+  public let diagnostics: sourcekitd_api_uid_t
   /// `key.educational_note_paths`
-  package let educationalNotePaths: sourcekitd_api_uid_t
+  public let educationalNotePaths: sourcekitd_api_uid_t
   /// `key.editor.format.options`
-  package let formatOptions: sourcekitd_api_uid_t
+  public let formatOptions: sourcekitd_api_uid_t
   /// `key.codecomplete.options`
-  package let codeCompleteOptions: sourcekitd_api_uid_t
+  public let codeCompleteOptions: sourcekitd_api_uid_t
   /// `key.typecontextinfo.options`
-  package let typeContextInfoOptions: sourcekitd_api_uid_t
+  public let typeContextInfoOptions: sourcekitd_api_uid_t
   /// `key.conformingmethods.options`
-  package let conformingMethodListOptions: sourcekitd_api_uid_t
+  public let conformingMethodListOptions: sourcekitd_api_uid_t
   /// `key.codecomplete.filterrules`
-  package let filterRules: sourcekitd_api_uid_t
+  public let filterRules: sourcekitd_api_uid_t
   /// `key.nextrequeststart`
-  package let nextRequestStart: sourcekitd_api_uid_t
+  public let nextRequestStart: sourcekitd_api_uid_t
   /// `key.popular`
-  package let popular: sourcekitd_api_uid_t
+  public let popular: sourcekitd_api_uid_t
   /// `key.unpopular`
-  package let unpopular: sourcekitd_api_uid_t
+  public let unpopular: sourcekitd_api_uid_t
   /// `key.hide`
-  package let hide: sourcekitd_api_uid_t
+  public let hide: sourcekitd_api_uid_t
   /// `key.platform`
-  package let platform: sourcekitd_api_uid_t
+  public let platform: sourcekitd_api_uid_t
   /// `key.is_deprecated`
-  package let isDeprecated: sourcekitd_api_uid_t
+  public let isDeprecated: sourcekitd_api_uid_t
   /// `key.is_unavailable`
-  package let isUnavailable: sourcekitd_api_uid_t
+  public let isUnavailable: sourcekitd_api_uid_t
   /// `key.is_optional`
-  package let isOptional: sourcekitd_api_uid_t
+  public let isOptional: sourcekitd_api_uid_t
   /// `key.is_async`
-  package let isAsync: sourcekitd_api_uid_t
+  public let isAsync: sourcekitd_api_uid_t
   /// `key.message`
-  package let message: sourcekitd_api_uid_t
+  public let message: sourcekitd_api_uid_t
   /// `key.introduced`
-  package let introduced: sourcekitd_api_uid_t
+  public let introduced: sourcekitd_api_uid_t
   /// `key.deprecated`
-  package let deprecated: sourcekitd_api_uid_t
+  public let deprecated: sourcekitd_api_uid_t
   /// `key.obsoleted`
-  package let obsoleted: sourcekitd_api_uid_t
+  public let obsoleted: sourcekitd_api_uid_t
   /// `key.cancel_builds`
-  package let cancelBuilds: sourcekitd_api_uid_t
+  public let cancelBuilds: sourcekitd_api_uid_t
   /// `key.removecache`
-  package let removeCache: sourcekitd_api_uid_t
+  public let removeCache: sourcekitd_api_uid_t
   /// `key.typeusr`
-  package let typeUsr: sourcekitd_api_uid_t
+  public let typeUsr: sourcekitd_api_uid_t
   /// `key.containertypeusr`
-  package let containerTypeUsr: sourcekitd_api_uid_t
+  public let containerTypeUsr: sourcekitd_api_uid_t
   /// `key.modulegroups`
-  package let moduleGroups: sourcekitd_api_uid_t
+  public let moduleGroups: sourcekitd_api_uid_t
   /// `key.basename`
-  package let baseName: sourcekitd_api_uid_t
+  public let baseName: sourcekitd_api_uid_t
   /// `key.argnames`
-  package let argNames: sourcekitd_api_uid_t
+  public let argNames: sourcekitd_api_uid_t
   /// `key.selectorpieces`
-  package let selectorPieces: sourcekitd_api_uid_t
+  public let selectorPieces: sourcekitd_api_uid_t
   /// `key.namekind`
-  package let nameKind: sourcekitd_api_uid_t
+  public let nameKind: sourcekitd_api_uid_t
   /// `key.localization_key`
-  package let localizationKey: sourcekitd_api_uid_t
+  public let localizationKey: sourcekitd_api_uid_t
   /// `key.is_zero_arg_selector`
-  package let isZeroArgSelector: sourcekitd_api_uid_t
+  public let isZeroArgSelector: sourcekitd_api_uid_t
   /// `key.swift_version`
-  package let swiftVersion: sourcekitd_api_uid_t
+  public let swiftVersion: sourcekitd_api_uid_t
   /// `key.value`
-  package let value: sourcekitd_api_uid_t
+  public let value: sourcekitd_api_uid_t
   /// `key.enablediagnostics`
-  package let enableDiagnostics: sourcekitd_api_uid_t
+  public let enableDiagnostics: sourcekitd_api_uid_t
   /// `key.groupname`
-  package let groupName: sourcekitd_api_uid_t
+  public let groupName: sourcekitd_api_uid_t
   /// `key.actionname`
-  package let actionName: sourcekitd_api_uid_t
+  public let actionName: sourcekitd_api_uid_t
   /// `key.synthesizedextensions`
-  package let synthesizedExtension: sourcekitd_api_uid_t
+  public let synthesizedExtension: sourcekitd_api_uid_t
   /// `key.usingswiftargs`
-  package let usingSwiftArgs: sourcekitd_api_uid_t
+  public let usingSwiftArgs: sourcekitd_api_uid_t
   /// `key.names`
-  package let names: sourcekitd_api_uid_t
+  public let names: sourcekitd_api_uid_t
   /// `key.uids`
-  package let uiDs: sourcekitd_api_uid_t
+  public let uiDs: sourcekitd_api_uid_t
   /// `key.syntactic_only`
-  package let syntacticOnly: sourcekitd_api_uid_t
+  public let syntacticOnly: sourcekitd_api_uid_t
   /// `key.parent_loc`
-  package let parentLoc: sourcekitd_api_uid_t
+  public let parentLoc: sourcekitd_api_uid_t
   /// `key.is_test_candidate`
-  package let isTestCandidate: sourcekitd_api_uid_t
+  public let isTestCandidate: sourcekitd_api_uid_t
   /// `key.overrides`
-  package let overrides: sourcekitd_api_uid_t
+  public let overrides: sourcekitd_api_uid_t
   /// `key.associated_usrs`
-  package let associatedUSRs: sourcekitd_api_uid_t
+  public let associatedUSRs: sourcekitd_api_uid_t
   /// `key.modulename`
-  package let moduleName: sourcekitd_api_uid_t
+  public let moduleName: sourcekitd_api_uid_t
   /// `key.related_decls`
-  package let relatedDecls: sourcekitd_api_uid_t
+  public let relatedDecls: sourcekitd_api_uid_t
   /// `key.simplified`
-  package let simplified: sourcekitd_api_uid_t
+  public let simplified: sourcekitd_api_uid_t
   /// `key.rangecontent`
-  package let rangeContent: sourcekitd_api_uid_t
+  public let rangeContent: sourcekitd_api_uid_t
   /// `key.cancel_on_subsequent_request`
-  package let cancelOnSubsequentRequest: sourcekitd_api_uid_t
+  public let cancelOnSubsequentRequest: sourcekitd_api_uid_t
   /// `key.include_non_editable_base_names`
-  package let includeNonEditableBaseNames: sourcekitd_api_uid_t
+  public let includeNonEditableBaseNames: sourcekitd_api_uid_t
   /// `key.renamelocations`
-  package let renameLocations: sourcekitd_api_uid_t
+  public let renameLocations: sourcekitd_api_uid_t
   /// `key.locations`
-  package let locations: sourcekitd_api_uid_t
+  public let locations: sourcekitd_api_uid_t
   /// `key.nametype`
-  package let nameType: sourcekitd_api_uid_t
+  public let nameType: sourcekitd_api_uid_t
   /// `key.newname`
-  package let newName: sourcekitd_api_uid_t
+  public let newName: sourcekitd_api_uid_t
   /// `key.categorizededits`
-  package let categorizedEdits: sourcekitd_api_uid_t
+  public let categorizedEdits: sourcekitd_api_uid_t
   /// `key.categorizedranges`
-  package let categorizedRanges: sourcekitd_api_uid_t
+  public let categorizedRanges: sourcekitd_api_uid_t
   /// `key.rangesworthnote`
-  package let rangesWorthNote: sourcekitd_api_uid_t
+  public let rangesWorthNote: sourcekitd_api_uid_t
   /// `key.edits`
-  package let edits: sourcekitd_api_uid_t
+  public let edits: sourcekitd_api_uid_t
   /// `key.endline`
-  package let endLine: sourcekitd_api_uid_t
+  public let endLine: sourcekitd_api_uid_t
   /// `key.endcolumn`
-  package let endColumn: sourcekitd_api_uid_t
+  public let endColumn: sourcekitd_api_uid_t
   /// `key.argindex`
-  package let argIndex: sourcekitd_api_uid_t
+  public let argIndex: sourcekitd_api_uid_t
   /// `key.text`
-  package let text: sourcekitd_api_uid_t
+  public let text: sourcekitd_api_uid_t
   /// `key.category`
-  package let category: sourcekitd_api_uid_t
+  public let category: sourcekitd_api_uid_t
   /// `key.categories`
-  package let categories: sourcekitd_api_uid_t
+  public let categories: sourcekitd_api_uid_t
   /// `key.is_function_like`
-  package let isFunctionLike: sourcekitd_api_uid_t
+  public let isFunctionLike: sourcekitd_api_uid_t
   /// `key.is_non_protocol_type`
-  package let isNonProtocolType: sourcekitd_api_uid_t
+  public let isNonProtocolType: sourcekitd_api_uid_t
   /// `key.refactor_actions`
-  package let refactorActions: sourcekitd_api_uid_t
+  public let refactorActions: sourcekitd_api_uid_t
   /// `key.retrieve_refactor_actions`
-  package let retrieveRefactorActions: sourcekitd_api_uid_t
+  public let retrieveRefactorActions: sourcekitd_api_uid_t
   /// `key.symbol_graph`
-  package let symbolGraph: sourcekitd_api_uid_t
+  public let symbolGraph: sourcekitd_api_uid_t
   /// `key.retrieve_symbol_graph`
-  package let retrieveSymbolGraph: sourcekitd_api_uid_t
+  public let retrieveSymbolGraph: sourcekitd_api_uid_t
   /// `key.parent_contexts`
-  package let parentContexts: sourcekitd_api_uid_t
+  public let parentContexts: sourcekitd_api_uid_t
   /// `key.referenced_symbols`
-  package let referencedSymbols: sourcekitd_api_uid_t
+  public let referencedSymbols: sourcekitd_api_uid_t
   /// `key.is_spi`
-  package let isSPI: sourcekitd_api_uid_t
+  public let isSPI: sourcekitd_api_uid_t
   /// `key.actionuid`
-  package let actionUID: sourcekitd_api_uid_t
+  public let actionUID: sourcekitd_api_uid_t
   /// `key.actionunavailablereason`
-  package let actionUnavailableReason: sourcekitd_api_uid_t
+  public let actionUnavailableReason: sourcekitd_api_uid_t
   /// `key.compileid`
-  package let compileID: sourcekitd_api_uid_t
+  public let compileID: sourcekitd_api_uid_t
   /// `key.compilerargs-string`
-  package let compilerArgsString: sourcekitd_api_uid_t
+  public let compilerArgsString: sourcekitd_api_uid_t
   /// `key.implicitmembers`
-  package let implicitMembers: sourcekitd_api_uid_t
+  public let implicitMembers: sourcekitd_api_uid_t
   /// `key.expectedtypes`
-  package let expectedTypes: sourcekitd_api_uid_t
+  public let expectedTypes: sourcekitd_api_uid_t
   /// `key.members`
-  package let members: sourcekitd_api_uid_t
+  public let members: sourcekitd_api_uid_t
   /// `key.printedtypebuffer`
-  package let typeBuffer: sourcekitd_api_uid_t
+  public let typeBuffer: sourcekitd_api_uid_t
   /// `key.expression_type_list`
-  package let expressionTypeList: sourcekitd_api_uid_t
+  public let expressionTypeList: sourcekitd_api_uid_t
   /// `key.expression_offset`
-  package let expressionOffset: sourcekitd_api_uid_t
+  public let expressionOffset: sourcekitd_api_uid_t
   /// `key.expression_length`
-  package let expressionLength: sourcekitd_api_uid_t
+  public let expressionLength: sourcekitd_api_uid_t
   /// `key.expression_type`
-  package let expressionType: sourcekitd_api_uid_t
+  public let expressionType: sourcekitd_api_uid_t
   /// `key.variable_type_list`
-  package let variableTypeList: sourcekitd_api_uid_t
+  public let variableTypeList: sourcekitd_api_uid_t
   /// `key.variable_offset`
-  package let variableOffset: sourcekitd_api_uid_t
+  public let variableOffset: sourcekitd_api_uid_t
   /// `key.variable_length`
-  package let variableLength: sourcekitd_api_uid_t
+  public let variableLength: sourcekitd_api_uid_t
   /// `key.variable_type`
-  package let variableType: sourcekitd_api_uid_t
+  public let variableType: sourcekitd_api_uid_t
   /// `key.variable_type_explicit`
-  package let variableTypeExplicit: sourcekitd_api_uid_t
+  public let variableTypeExplicit: sourcekitd_api_uid_t
   /// `key.fully_qualified`
-  package let fullyQualified: sourcekitd_api_uid_t
+  public let fullyQualified: sourcekitd_api_uid_t
   /// `key.canonicalize_type`
-  package let canonicalizeType: sourcekitd_api_uid_t
+  public let canonicalizeType: sourcekitd_api_uid_t
   /// `key.internal_diagnostic`
-  package let internalDiagnostic: sourcekitd_api_uid_t
+  public let internalDiagnostic: sourcekitd_api_uid_t
   /// `key.vfs.name`
-  package let vfsName: sourcekitd_api_uid_t
+  public let vfsName: sourcekitd_api_uid_t
   /// `key.vfs.options`
-  package let vfsOptions: sourcekitd_api_uid_t
+  public let vfsOptions: sourcekitd_api_uid_t
   /// `key.files`
-  package let files: sourcekitd_api_uid_t
+  public let files: sourcekitd_api_uid_t
   /// `key.optimize_for_ide`
-  package let optimizeForIDE: sourcekitd_api_uid_t
+  public let optimizeForIDE: sourcekitd_api_uid_t
   /// `key.required_bystanders`
-  package let requiredBystanders: sourcekitd_api_uid_t
+  public let requiredBystanders: sourcekitd_api_uid_t
   /// `key.reusingastcontext`
-  package let reusingASTContext: sourcekitd_api_uid_t
+  public let reusingASTContext: sourcekitd_api_uid_t
   /// `key.completion_max_astcontext_reuse_count`
-  package let completionMaxASTContextReuseCount: sourcekitd_api_uid_t
+  public let completionMaxASTContextReuseCount: sourcekitd_api_uid_t
   /// `key.completion_check_dependency_interval`
-  package let completionCheckDependencyInterval: sourcekitd_api_uid_t
+  public let completionCheckDependencyInterval: sourcekitd_api_uid_t
   /// `key.annotated.typename`
-  package let annotatedTypename: sourcekitd_api_uid_t
+  public let annotatedTypename: sourcekitd_api_uid_t
   /// `key.compile_operation`
-  package let compileOperation: sourcekitd_api_uid_t
+  public let compileOperation: sourcekitd_api_uid_t
   /// `key.effective_access`
-  package let effectiveAccess: sourcekitd_api_uid_t
+  public let effectiveAccess: sourcekitd_api_uid_t
   /// `key.decl_lang`
-  package let declarationLang: sourcekitd_api_uid_t
+  public let declarationLang: sourcekitd_api_uid_t
   /// `key.secondary_symbols`
-  package let secondarySymbols: sourcekitd_api_uid_t
+  public let secondarySymbols: sourcekitd_api_uid_t
   /// `key.simulate_long_request`
-  package let simulateLongRequest: sourcekitd_api_uid_t
+  public let simulateLongRequest: sourcekitd_api_uid_t
   /// `key.is_synthesized`
-  package let isSynthesized: sourcekitd_api_uid_t
+  public let isSynthesized: sourcekitd_api_uid_t
   /// `key.buffer_name`
-  package let bufferName: sourcekitd_api_uid_t
+  public let bufferName: sourcekitd_api_uid_t
   /// `key.barriers_enabled`
-  package let barriersEnabled: sourcekitd_api_uid_t
+  public let barriersEnabled: sourcekitd_api_uid_t
   /// `key.expansions`
-  package let expansions: sourcekitd_api_uid_t
+  public let expansions: sourcekitd_api_uid_t
   /// `key.macro_roles`
-  package let macroRoles: sourcekitd_api_uid_t
+  public let macroRoles: sourcekitd_api_uid_t
   /// `key.expanded_macro_replacements`
-  package let expandedMacroReplacements: sourcekitd_api_uid_t
+  public let expandedMacroReplacements: sourcekitd_api_uid_t
   /// `key.index_store_path`
-  package let indexStorePath: sourcekitd_api_uid_t
+  public let indexStorePath: sourcekitd_api_uid_t
   /// `key.index_unit_output_path`
-  package let indexUnitOutputPath: sourcekitd_api_uid_t
+  public let indexUnitOutputPath: sourcekitd_api_uid_t
   /// `key.include_locals`
-  package let includeLocals: sourcekitd_api_uid_t
+  public let includeLocals: sourcekitd_api_uid_t
   /// `key.ignore_clang_modules`
-  package let ignoreClangModules: sourcekitd_api_uid_t
+  public let ignoreClangModules: sourcekitd_api_uid_t
   /// `key.include_system_modules`
-  package let includeSystemModules: sourcekitd_api_uid_t
+  public let includeSystemModules: sourcekitd_api_uid_t
   /// `key.ignore_stdlib`
-  package let ignoreStdlib: sourcekitd_api_uid_t
+  public let ignoreStdlib: sourcekitd_api_uid_t
   /// `key.disable_implicit_modules`
-  package let disableImplicitModules: sourcekitd_api_uid_t
+  public let disableImplicitModules: sourcekitd_api_uid_t
   /// `key.compilerargs`
-  package let compilerArgs: sourcekitd_api_uid_t
+  public let compilerArgs: sourcekitd_api_uid_t
   /// `key.sourcetext`
-  package let sourceText: sourcekitd_api_uid_t
+  public let sourceText: sourcekitd_api_uid_t
   /// `key.codecomplete.sort.byname`
-  package let sortByName: sourcekitd_api_uid_t
+  public let sortByName: sourcekitd_api_uid_t
   /// `key.codecomplete.sort.useimportdepth`
-  package let useImportDepth: sourcekitd_api_uid_t
+  public let useImportDepth: sourcekitd_api_uid_t
   /// `key.codecomplete.group.overloads`
-  package let groupOverloads: sourcekitd_api_uid_t
+  public let groupOverloads: sourcekitd_api_uid_t
   /// `key.codecomplete.group.stems`
-  package let groupStems: sourcekitd_api_uid_t
+  public let groupStems: sourcekitd_api_uid_t
   /// `key.codecomplete.filtertext`
-  package let filterText: sourcekitd_api_uid_t
+  public let filterText: sourcekitd_api_uid_t
   /// `key.codecomplete.requestlimit`
-  package let requestLimit: sourcekitd_api_uid_t
+  public let requestLimit: sourcekitd_api_uid_t
   /// `key.codecomplete.requeststart`
-  package let requestStart: sourcekitd_api_uid_t
+  public let requestStart: sourcekitd_api_uid_t
   /// `key.codecomplete.hideunderscores`
-  package let hideUnderscores: sourcekitd_api_uid_t
+  public let hideUnderscores: sourcekitd_api_uid_t
   /// `key.codecomplete.hidelowpriority`
-  package let hideLowPriority: sourcekitd_api_uid_t
+  public let hideLowPriority: sourcekitd_api_uid_t
   /// `key.codecomplete.hidebyname`
-  package let hideByName: sourcekitd_api_uid_t
+  public let hideByName: sourcekitd_api_uid_t
   /// `key.codecomplete.includeexactmatch`
-  package let includeExactMatch: sourcekitd_api_uid_t
+  public let includeExactMatch: sourcekitd_api_uid_t
   /// `key.codecomplete.addinnerresults`
-  package let addInnerResults: sourcekitd_api_uid_t
+  public let addInnerResults: sourcekitd_api_uid_t
   /// `key.codecomplete.addinneroperators`
-  package let addInnerOperators: sourcekitd_api_uid_t
+  public let addInnerOperators: sourcekitd_api_uid_t
   /// `key.codecomplete.addinitstotoplevel`
-  package let addInitsToTopLevel: sourcekitd_api_uid_t
+  public let addInitsToTopLevel: sourcekitd_api_uid_t
   /// `key.codecomplete.fuzzymatching`
-  package let fuzzyMatching: sourcekitd_api_uid_t
+  public let fuzzyMatching: sourcekitd_api_uid_t
   /// `key.codecomplete.showtopnonliteralresults`
-  package let topNonLiteral: sourcekitd_api_uid_t
+  public let topNonLiteral: sourcekitd_api_uid_t
   /// `key.codecomplete.sort.contextweight`
-  package let contextWeight: sourcekitd_api_uid_t
+  public let contextWeight: sourcekitd_api_uid_t
   /// `key.codecomplete.sort.fuzzyweight`
-  package let fuzzyWeight: sourcekitd_api_uid_t
+  public let fuzzyWeight: sourcekitd_api_uid_t
   /// `key.codecomplete.sort.popularitybonus`
-  package let popularityBonus: sourcekitd_api_uid_t
+  public let popularityBonus: sourcekitd_api_uid_t
   /// `key.codecomplete.annotateddescription`
-  package let annotatedDescription: sourcekitd_api_uid_t
+  public let annotatedDescription: sourcekitd_api_uid_t
   /// `key.codecomplete.includeobjectliterals`
-  package let includeObjectLiterals: sourcekitd_api_uid_t
+  public let includeObjectLiterals: sourcekitd_api_uid_t
   /// `key.codecomplete.use_new_api`
-  package let useNewAPI: sourcekitd_api_uid_t
+  public let useNewAPI: sourcekitd_api_uid_t
   /// `key.codecomplete.addcallwithnodefaultargs`
-  package let addCallWithNoDefaultArgs: sourcekitd_api_uid_t
+  public let addCallWithNoDefaultArgs: sourcekitd_api_uid_t
   /// `key.codecomplete.include_semantic_components`
-  package let includeSemanticComponents: sourcekitd_api_uid_t
+  public let includeSemanticComponents: sourcekitd_api_uid_t
   /// `key.codecomplete.use_xpc_serialization`
-  package let useXPCSerialization: sourcekitd_api_uid_t
+  public let useXPCSerialization: sourcekitd_api_uid_t
   /// `key.codecomplete.maxresults`
-  package let maxResults: sourcekitd_api_uid_t
+  public let maxResults: sourcekitd_api_uid_t
   /// `key.annotated.typename`
-  package let annotatedTypeName: sourcekitd_api_uid_t
+  public let annotatedTypeName: sourcekitd_api_uid_t
   /// `key.priority_bucket`
-  package let priorityBucket: sourcekitd_api_uid_t
+  public let priorityBucket: sourcekitd_api_uid_t
   /// `key.identifier`
-  package let identifier: sourcekitd_api_uid_t
+  public let identifier: sourcekitd_api_uid_t
   /// `key.text_match_score`
-  package let textMatchScore: sourcekitd_api_uid_t
+  public let textMatchScore: sourcekitd_api_uid_t
   /// `key.semantic_score`
-  package let semanticScore: sourcekitd_api_uid_t
+  public let semanticScore: sourcekitd_api_uid_t
   /// `key.semantic_score_components`
-  package let semanticScoreComponents: sourcekitd_api_uid_t
+  public let semanticScoreComponents: sourcekitd_api_uid_t
   /// `key.symbol_popularity`
-  package let symbolPopularity: sourcekitd_api_uid_t
+  public let symbolPopularity: sourcekitd_api_uid_t
   /// `key.module_popularity`
-  package let modulePopularity: sourcekitd_api_uid_t
+  public let modulePopularity: sourcekitd_api_uid_t
   /// `key.popularity.key`
-  package let popularityKey: sourcekitd_api_uid_t
+  public let popularityKey: sourcekitd_api_uid_t
   /// `key.popularity.value.int.billion`
-  package let popularityValueIntBillion: sourcekitd_api_uid_t
+  public let popularityValueIntBillion: sourcekitd_api_uid_t
   /// `key.recent_completions`
-  package let recentCompletions: sourcekitd_api_uid_t
+  public let recentCompletions: sourcekitd_api_uid_t
   /// `key.unfiltered_result_count`
-  package let unfilteredResultCount: sourcekitd_api_uid_t
+  public let unfilteredResultCount: sourcekitd_api_uid_t
   /// `key.member_access_types`
-  package let memberAccessTypes: sourcekitd_api_uid_t
+  public let memberAccessTypes: sourcekitd_api_uid_t
   /// `key.has_diagnostic`
-  package let hasDiagnostic: sourcekitd_api_uid_t
+  public let hasDiagnostic: sourcekitd_api_uid_t
   /// `key.group_id`
-  package let groupId: sourcekitd_api_uid_t
+  public let groupId: sourcekitd_api_uid_t
   /// `key.scoped_popularity_table_path`
-  package let scopedPopularityTablePath: sourcekitd_api_uid_t
+  public let scopedPopularityTablePath: sourcekitd_api_uid_t
   /// `key.popular_modules`
-  package let popularModules: sourcekitd_api_uid_t
+  public let popularModules: sourcekitd_api_uid_t
   /// `key.notorious_modules`
-  package let notoriousModules: sourcekitd_api_uid_t
+  public let notoriousModules: sourcekitd_api_uid_t
   /// `key.codecomplete.setpopularapi_used_score_components`
-  package let usedScoreComponents: sourcekitd_api_uid_t
+  public let usedScoreComponents: sourcekitd_api_uid_t
   /// `key.editor.format.usetabs`
-  package let useTabs: sourcekitd_api_uid_t
+  public let useTabs: sourcekitd_api_uid_t
   /// `key.editor.format.indentwidth`
-  package let indentWidth: sourcekitd_api_uid_t
+  public let indentWidth: sourcekitd_api_uid_t
   /// `key.editor.format.tabwidth`
-  package let tabWidth: sourcekitd_api_uid_t
+  public let tabWidth: sourcekitd_api_uid_t
   /// `key.editor.format.indent_switch_case`
-  package let indentSwitchCase: sourcekitd_api_uid_t
+  public let indentSwitchCase: sourcekitd_api_uid_t
 
-  package init(api: sourcekitd_api_functions_t) {
+  public init(api: sourcekitd_api_functions_t) {
     versionMajor = api.uid_get_from_cstr("key.version_major")!
     versionMinor = api.uid_get_from_cstr("key.version_minor")!
     versionPatch = api.uid_get_from_cstr("key.version_patch")!
@@ -776,119 +776,119 @@ package struct sourcekitd_api_keys {
   }
 }
 
-package struct sourcekitd_api_requests {
+public struct sourcekitd_api_requests {
   /// `source.request.protocol_version`
-  package let protocolVersion: sourcekitd_api_uid_t
+  public let protocolVersion: sourcekitd_api_uid_t
   /// `source.request.compiler_version`
-  package let compilerVersion: sourcekitd_api_uid_t
+  public let compilerVersion: sourcekitd_api_uid_t
   /// `source.request.crash_exit`
-  package let crashWithExit: sourcekitd_api_uid_t
+  public let crashWithExit: sourcekitd_api_uid_t
   /// `source.request.demangle`
-  package let demangle: sourcekitd_api_uid_t
+  public let demangle: sourcekitd_api_uid_t
   /// `source.request.mangle_simple_class`
-  package let mangleSimpleClass: sourcekitd_api_uid_t
+  public let mangleSimpleClass: sourcekitd_api_uid_t
   /// `source.request.indexsource`
-  package let index: sourcekitd_api_uid_t
+  public let index: sourcekitd_api_uid_t
   /// `source.request.docinfo`
-  package let docInfo: sourcekitd_api_uid_t
+  public let docInfo: sourcekitd_api_uid_t
   /// `source.request.codecomplete`
-  package let codeComplete: sourcekitd_api_uid_t
+  public let codeComplete: sourcekitd_api_uid_t
   /// `source.request.codecomplete.open`
-  package let codeCompleteOpen: sourcekitd_api_uid_t
+  public let codeCompleteOpen: sourcekitd_api_uid_t
   /// `source.request.codecomplete.close`
-  package let codeCompleteClose: sourcekitd_api_uid_t
+  public let codeCompleteClose: sourcekitd_api_uid_t
   /// `source.request.codecomplete.update`
-  package let codeCompleteUpdate: sourcekitd_api_uid_t
+  public let codeCompleteUpdate: sourcekitd_api_uid_t
   /// `source.request.codecomplete.cache.ondisk`
-  package let codeCompleteCacheOnDisk: sourcekitd_api_uid_t
+  public let codeCompleteCacheOnDisk: sourcekitd_api_uid_t
   /// `source.request.codecomplete.setpopularapi`
-  package let codeCompleteSetPopularAPI: sourcekitd_api_uid_t
+  public let codeCompleteSetPopularAPI: sourcekitd_api_uid_t
   /// `source.request.codecomplete.setcustom`
-  package let codeCompleteSetCustom: sourcekitd_api_uid_t
+  public let codeCompleteSetCustom: sourcekitd_api_uid_t
   /// `source.request.typecontextinfo`
-  package let typeContextInfo: sourcekitd_api_uid_t
+  public let typeContextInfo: sourcekitd_api_uid_t
   /// `source.request.conformingmethods`
-  package let conformingMethodList: sourcekitd_api_uid_t
+  public let conformingMethodList: sourcekitd_api_uid_t
   /// `source.request.activeregions`
-  package let activeRegions: sourcekitd_api_uid_t
+  public let activeRegions: sourcekitd_api_uid_t
   /// `source.request.cursorinfo`
-  package let cursorInfo: sourcekitd_api_uid_t
+  public let cursorInfo: sourcekitd_api_uid_t
   /// `source.request.rangeinfo`
-  package let rangeInfo: sourcekitd_api_uid_t
+  public let rangeInfo: sourcekitd_api_uid_t
   /// `source.request.relatedidents`
-  package let relatedIdents: sourcekitd_api_uid_t
+  public let relatedIdents: sourcekitd_api_uid_t
   /// `source.request.editor.open`
-  package let editorOpen: sourcekitd_api_uid_t
+  public let editorOpen: sourcekitd_api_uid_t
   /// `source.request.editor.open.interface`
-  package let editorOpenInterface: sourcekitd_api_uid_t
+  public let editorOpenInterface: sourcekitd_api_uid_t
   /// `source.request.editor.open.interface.header`
-  package let editorOpenHeaderInterface: sourcekitd_api_uid_t
+  public let editorOpenHeaderInterface: sourcekitd_api_uid_t
   /// `source.request.editor.open.interface.swiftsource`
-  package let editorOpenSwiftSourceInterface: sourcekitd_api_uid_t
+  public let editorOpenSwiftSourceInterface: sourcekitd_api_uid_t
   /// `source.request.editor.open.interface.swifttype`
-  package let editorOpenSwiftTypeInterface: sourcekitd_api_uid_t
+  public let editorOpenSwiftTypeInterface: sourcekitd_api_uid_t
   /// `source.request.editor.extract.comment`
-  package let editorExtractTextFromComment: sourcekitd_api_uid_t
+  public let editorExtractTextFromComment: sourcekitd_api_uid_t
   /// `source.request.editor.close`
-  package let editorClose: sourcekitd_api_uid_t
+  public let editorClose: sourcekitd_api_uid_t
   /// `source.request.editor.replacetext`
-  package let editorReplaceText: sourcekitd_api_uid_t
+  public let editorReplaceText: sourcekitd_api_uid_t
   /// `source.request.editor.formattext`
-  package let editorFormatText: sourcekitd_api_uid_t
+  public let editorFormatText: sourcekitd_api_uid_t
   /// `source.request.editor.expand_placeholder`
-  package let editorExpandPlaceholder: sourcekitd_api_uid_t
+  public let editorExpandPlaceholder: sourcekitd_api_uid_t
   /// `source.request.editor.find_usr`
-  package let editorFindUSR: sourcekitd_api_uid_t
+  public let editorFindUSR: sourcekitd_api_uid_t
   /// `source.request.editor.find_interface_doc`
-  package let editorFindInterfaceDoc: sourcekitd_api_uid_t
+  public let editorFindInterfaceDoc: sourcekitd_api_uid_t
   /// `source.request.buildsettings.register`
-  package let buildSettingsRegister: sourcekitd_api_uid_t
+  public let buildSettingsRegister: sourcekitd_api_uid_t
   /// `source.request.module.groups`
-  package let moduleGroups: sourcekitd_api_uid_t
+  public let moduleGroups: sourcekitd_api_uid_t
   /// `source.request.name.translation`
-  package let nameTranslation: sourcekitd_api_uid_t
+  public let nameTranslation: sourcekitd_api_uid_t
   /// `source.request.convert.markup.xml`
-  package let markupToXML: sourcekitd_api_uid_t
+  public let markupToXML: sourcekitd_api_uid_t
   /// `source.request.statistics`
-  package let statistics: sourcekitd_api_uid_t
+  public let statistics: sourcekitd_api_uid_t
   /// `source.request.find-syntactic-rename-ranges`
-  package let findRenameRanges: sourcekitd_api_uid_t
+  public let findRenameRanges: sourcekitd_api_uid_t
   /// `source.request.find-local-rename-ranges`
-  package let findLocalRenameRanges: sourcekitd_api_uid_t
+  public let findLocalRenameRanges: sourcekitd_api_uid_t
   /// `source.request.semantic.refactoring`
-  package let semanticRefactoring: sourcekitd_api_uid_t
+  public let semanticRefactoring: sourcekitd_api_uid_t
   /// `source.request.enable-compile-notifications`
-  package let enableCompileNotifications: sourcekitd_api_uid_t
+  public let enableCompileNotifications: sourcekitd_api_uid_t
   /// `source.request.test_notification`
-  package let testNotification: sourcekitd_api_uid_t
+  public let testNotification: sourcekitd_api_uid_t
   /// `source.request.expression.type`
-  package let collectExpressionType: sourcekitd_api_uid_t
+  public let collectExpressionType: sourcekitd_api_uid_t
   /// `source.request.variable.type`
-  package let collectVariableType: sourcekitd_api_uid_t
+  public let collectVariableType: sourcekitd_api_uid_t
   /// `source.request.configuration.global`
-  package let globalConfiguration: sourcekitd_api_uid_t
+  public let globalConfiguration: sourcekitd_api_uid_t
   /// `source.request.dependency_updated`
-  package let dependencyUpdated: sourcekitd_api_uid_t
+  public let dependencyUpdated: sourcekitd_api_uid_t
   /// `source.request.diagnostics`
-  package let diagnostics: sourcekitd_api_uid_t
+  public let diagnostics: sourcekitd_api_uid_t
   /// `source.request.semantic_tokens`
-  package let semanticTokens: sourcekitd_api_uid_t
+  public let semanticTokens: sourcekitd_api_uid_t
   /// `source.request.compile`
-  package let compile: sourcekitd_api_uid_t
+  public let compile: sourcekitd_api_uid_t
   /// `source.request.compile.close`
-  package let compileClose: sourcekitd_api_uid_t
+  public let compileClose: sourcekitd_api_uid_t
   /// `source.request.enable_request_barriers`
-  package let enableRequestBarriers: sourcekitd_api_uid_t
+  public let enableRequestBarriers: sourcekitd_api_uid_t
   /// `source.request.syntactic_macro_expansion`
-  package let syntacticMacroExpansion: sourcekitd_api_uid_t
+  public let syntacticMacroExpansion: sourcekitd_api_uid_t
   /// `source.request.index_to_store`
-  package let indexToStore: sourcekitd_api_uid_t
+  public let indexToStore: sourcekitd_api_uid_t
   /// `source.request.codecomplete.documentation`
-  package let codeCompleteDocumentation: sourcekitd_api_uid_t
+  public let codeCompleteDocumentation: sourcekitd_api_uid_t
   /// `source.request.codecomplete.diagnostic`
-  package let codeCompleteDiagnostic: sourcekitd_api_uid_t
+  public let codeCompleteDiagnostic: sourcekitd_api_uid_t
 
-  package init(api: sourcekitd_api_functions_t) {
+  public init(api: sourcekitd_api_functions_t) {
     protocolVersion = api.uid_get_from_cstr("source.request.protocol_version")!
     compilerVersion = api.uid_get_from_cstr("source.request.compiler_version")!
     crashWithExit = api.uid_get_from_cstr("source.request.crash_exit")!
@@ -947,391 +947,391 @@ package struct sourcekitd_api_requests {
   }
 }
 
-package struct sourcekitd_api_values {
+public struct sourcekitd_api_values {
   /// `source.lang.swift.decl.function.free`
-  package let declFunctionFree: sourcekitd_api_uid_t
+  public let declFunctionFree: sourcekitd_api_uid_t
   /// `source.lang.swift.ref.function.free`
-  package let refFunctionFree: sourcekitd_api_uid_t
+  public let refFunctionFree: sourcekitd_api_uid_t
   /// `source.lang.swift.decl.function.method.instance`
-  package let declMethodInstance: sourcekitd_api_uid_t
+  public let declMethodInstance: sourcekitd_api_uid_t
   /// `source.lang.swift.ref.function.method.instance`
-  package let refMethodInstance: sourcekitd_api_uid_t
+  public let refMethodInstance: sourcekitd_api_uid_t
   /// `source.lang.swift.decl.function.method.static`
-  package let declMethodStatic: sourcekitd_api_uid_t
+  public let declMethodStatic: sourcekitd_api_uid_t
   /// `source.lang.swift.ref.function.method.static`
-  package let refMethodStatic: sourcekitd_api_uid_t
+  public let refMethodStatic: sourcekitd_api_uid_t
   /// `source.lang.swift.decl.function.method.class`
-  package let declMethodClass: sourcekitd_api_uid_t
+  public let declMethodClass: sourcekitd_api_uid_t
   /// `source.lang.swift.ref.function.method.class`
-  package let refMethodClass: sourcekitd_api_uid_t
+  public let refMethodClass: sourcekitd_api_uid_t
   /// `source.lang.swift.decl.function.accessor.getter`
-  package let declAccessorGetter: sourcekitd_api_uid_t
+  public let declAccessorGetter: sourcekitd_api_uid_t
   /// `source.lang.swift.ref.function.accessor.getter`
-  package let refAccessorGetter: sourcekitd_api_uid_t
+  public let refAccessorGetter: sourcekitd_api_uid_t
   /// `source.lang.swift.decl.function.accessor.setter`
-  package let declAccessorSetter: sourcekitd_api_uid_t
+  public let declAccessorSetter: sourcekitd_api_uid_t
   /// `source.lang.swift.ref.function.accessor.setter`
-  package let refAccessorSetter: sourcekitd_api_uid_t
+  public let refAccessorSetter: sourcekitd_api_uid_t
   /// `source.lang.swift.decl.function.accessor.willset`
-  package let declAccessorWillSet: sourcekitd_api_uid_t
+  public let declAccessorWillSet: sourcekitd_api_uid_t
   /// `source.lang.swift.ref.function.accessor.willset`
-  package let refAccessorWillSet: sourcekitd_api_uid_t
+  public let refAccessorWillSet: sourcekitd_api_uid_t
   /// `source.lang.swift.decl.function.accessor.didset`
-  package let declAccessorDidSet: sourcekitd_api_uid_t
+  public let declAccessorDidSet: sourcekitd_api_uid_t
   /// `source.lang.swift.ref.function.accessor.didset`
-  package let refAccessorDidSet: sourcekitd_api_uid_t
+  public let refAccessorDidSet: sourcekitd_api_uid_t
   /// `source.lang.swift.decl.function.accessor.address`
-  package let declAccessorAddress: sourcekitd_api_uid_t
+  public let declAccessorAddress: sourcekitd_api_uid_t
   /// `source.lang.swift.ref.function.accessor.address`
-  package let refAccessorAddress: sourcekitd_api_uid_t
+  public let refAccessorAddress: sourcekitd_api_uid_t
   /// `source.lang.swift.decl.function.accessor.mutableaddress`
-  package let declAccessorMutableAddress: sourcekitd_api_uid_t
+  public let declAccessorMutableAddress: sourcekitd_api_uid_t
   /// `source.lang.swift.ref.function.accessor.mutableaddress`
-  package let refAccessorMutableAddress: sourcekitd_api_uid_t
+  public let refAccessorMutableAddress: sourcekitd_api_uid_t
   /// `source.lang.swift.decl.function.accessor.read`
-  package let declAccessorRead: sourcekitd_api_uid_t
+  public let declAccessorRead: sourcekitd_api_uid_t
   /// `source.lang.swift.ref.function.accessor.read`
-  package let refAccessorRead: sourcekitd_api_uid_t
+  public let refAccessorRead: sourcekitd_api_uid_t
   /// `source.lang.swift.decl.function.accessor.modify`
-  package let declAccessorModify: sourcekitd_api_uid_t
+  public let declAccessorModify: sourcekitd_api_uid_t
   /// `source.lang.swift.ref.function.accessor.modify`
-  package let refAccessorModify: sourcekitd_api_uid_t
+  public let refAccessorModify: sourcekitd_api_uid_t
   /// `source.lang.swift.decl.function.accessor.init`
-  package let declAccessorInit: sourcekitd_api_uid_t
+  public let declAccessorInit: sourcekitd_api_uid_t
   /// `source.lang.swift.ref.function.accessor.init`
-  package let refAccessorInit: sourcekitd_api_uid_t
+  public let refAccessorInit: sourcekitd_api_uid_t
   /// `source.lang.swift.decl.function.constructor`
-  package let declConstructor: sourcekitd_api_uid_t
+  public let declConstructor: sourcekitd_api_uid_t
   /// `source.lang.swift.ref.function.constructor`
-  package let refConstructor: sourcekitd_api_uid_t
+  public let refConstructor: sourcekitd_api_uid_t
   /// `source.lang.swift.decl.function.destructor`
-  package let declDestructor: sourcekitd_api_uid_t
+  public let declDestructor: sourcekitd_api_uid_t
   /// `source.lang.swift.ref.function.destructor`
-  package let refDestructor: sourcekitd_api_uid_t
+  public let refDestructor: sourcekitd_api_uid_t
   /// `source.lang.swift.decl.function.operator.prefix`
-  package let declFunctionPrefixOperator: sourcekitd_api_uid_t
+  public let declFunctionPrefixOperator: sourcekitd_api_uid_t
   /// `source.lang.swift.decl.function.operator.postfix`
-  package let declFunctionPostfixOperator: sourcekitd_api_uid_t
+  public let declFunctionPostfixOperator: sourcekitd_api_uid_t
   /// `source.lang.swift.decl.function.operator.infix`
-  package let declFunctionInfixOperator: sourcekitd_api_uid_t
+  public let declFunctionInfixOperator: sourcekitd_api_uid_t
   /// `source.lang.swift.ref.function.operator.prefix`
-  package let refFunctionPrefixOperator: sourcekitd_api_uid_t
+  public let refFunctionPrefixOperator: sourcekitd_api_uid_t
   /// `source.lang.swift.ref.function.operator.postfix`
-  package let refFunctionPostfixOperator: sourcekitd_api_uid_t
+  public let refFunctionPostfixOperator: sourcekitd_api_uid_t
   /// `source.lang.swift.ref.function.operator.infix`
-  package let refFunctionInfixOperator: sourcekitd_api_uid_t
+  public let refFunctionInfixOperator: sourcekitd_api_uid_t
   /// `source.lang.swift.decl.precedencegroup`
-  package let declPrecedenceGroup: sourcekitd_api_uid_t
+  public let declPrecedenceGroup: sourcekitd_api_uid_t
   /// `source.lang.swift.ref.precedencegroup`
-  package let refPrecedenceGroup: sourcekitd_api_uid_t
+  public let refPrecedenceGroup: sourcekitd_api_uid_t
   /// `source.lang.swift.decl.function.subscript`
-  package let declSubscript: sourcekitd_api_uid_t
+  public let declSubscript: sourcekitd_api_uid_t
   /// `source.lang.swift.ref.function.subscript`
-  package let refSubscript: sourcekitd_api_uid_t
+  public let refSubscript: sourcekitd_api_uid_t
   /// `source.lang.swift.decl.var.global`
-  package let declVarGlobal: sourcekitd_api_uid_t
+  public let declVarGlobal: sourcekitd_api_uid_t
   /// `source.lang.swift.ref.var.global`
-  package let refVarGlobal: sourcekitd_api_uid_t
+  public let refVarGlobal: sourcekitd_api_uid_t
   /// `source.lang.swift.decl.var.instance`
-  package let declVarInstance: sourcekitd_api_uid_t
+  public let declVarInstance: sourcekitd_api_uid_t
   /// `source.lang.swift.ref.var.instance`
-  package let refVarInstance: sourcekitd_api_uid_t
+  public let refVarInstance: sourcekitd_api_uid_t
   /// `source.lang.swift.decl.var.static`
-  package let declVarStatic: sourcekitd_api_uid_t
+  public let declVarStatic: sourcekitd_api_uid_t
   /// `source.lang.swift.ref.var.static`
-  package let refVarStatic: sourcekitd_api_uid_t
+  public let refVarStatic: sourcekitd_api_uid_t
   /// `source.lang.swift.decl.var.class`
-  package let declVarClass: sourcekitd_api_uid_t
+  public let declVarClass: sourcekitd_api_uid_t
   /// `source.lang.swift.ref.var.class`
-  package let refVarClass: sourcekitd_api_uid_t
+  public let refVarClass: sourcekitd_api_uid_t
   /// `source.lang.swift.decl.var.local`
-  package let declVarLocal: sourcekitd_api_uid_t
+  public let declVarLocal: sourcekitd_api_uid_t
   /// `source.lang.swift.ref.var.local`
-  package let refVarLocal: sourcekitd_api_uid_t
+  public let refVarLocal: sourcekitd_api_uid_t
   /// `source.lang.swift.decl.var.parameter`
-  package let declVarParam: sourcekitd_api_uid_t
+  public let declVarParam: sourcekitd_api_uid_t
   /// `source.lang.swift.decl.module`
-  package let declModule: sourcekitd_api_uid_t
+  public let declModule: sourcekitd_api_uid_t
   /// `source.lang.swift.decl.class`
-  package let declClass: sourcekitd_api_uid_t
+  public let declClass: sourcekitd_api_uid_t
   /// `source.lang.swift.ref.class`
-  package let refClass: sourcekitd_api_uid_t
+  public let refClass: sourcekitd_api_uid_t
   /// `source.lang.swift.decl.actor`
-  package let declActor: sourcekitd_api_uid_t
+  public let declActor: sourcekitd_api_uid_t
   /// `source.lang.swift.ref.actor`
-  package let refActor: sourcekitd_api_uid_t
+  public let refActor: sourcekitd_api_uid_t
   /// `source.lang.swift.decl.struct`
-  package let declStruct: sourcekitd_api_uid_t
+  public let declStruct: sourcekitd_api_uid_t
   /// `source.lang.swift.ref.struct`
-  package let refStruct: sourcekitd_api_uid_t
+  public let refStruct: sourcekitd_api_uid_t
   /// `source.lang.swift.decl.enum`
-  package let declEnum: sourcekitd_api_uid_t
+  public let declEnum: sourcekitd_api_uid_t
   /// `source.lang.swift.ref.enum`
-  package let refEnum: sourcekitd_api_uid_t
+  public let refEnum: sourcekitd_api_uid_t
   /// `source.lang.swift.decl.enumcase`
-  package let declEnumCase: sourcekitd_api_uid_t
+  public let declEnumCase: sourcekitd_api_uid_t
   /// `source.lang.swift.decl.enumelement`
-  package let declEnumElement: sourcekitd_api_uid_t
+  public let declEnumElement: sourcekitd_api_uid_t
   /// `source.lang.swift.ref.enumelement`
-  package let refEnumElement: sourcekitd_api_uid_t
+  public let refEnumElement: sourcekitd_api_uid_t
   /// `source.lang.swift.decl.protocol`
-  package let declProtocol: sourcekitd_api_uid_t
+  public let declProtocol: sourcekitd_api_uid_t
   /// `source.lang.swift.ref.protocol`
-  package let refProtocol: sourcekitd_api_uid_t
+  public let refProtocol: sourcekitd_api_uid_t
   /// `source.lang.swift.decl.extension`
-  package let declExtension: sourcekitd_api_uid_t
+  public let declExtension: sourcekitd_api_uid_t
   /// `source.lang.swift.decl.extension.struct`
-  package let declExtensionStruct: sourcekitd_api_uid_t
+  public let declExtensionStruct: sourcekitd_api_uid_t
   /// `source.lang.swift.decl.extension.class`
-  package let declExtensionClass: sourcekitd_api_uid_t
+  public let declExtensionClass: sourcekitd_api_uid_t
   /// `source.lang.swift.decl.extension.enum`
-  package let declExtensionEnum: sourcekitd_api_uid_t
+  public let declExtensionEnum: sourcekitd_api_uid_t
   /// `source.lang.swift.decl.extension.protocol`
-  package let declExtensionProtocol: sourcekitd_api_uid_t
+  public let declExtensionProtocol: sourcekitd_api_uid_t
   /// `source.lang.swift.decl.associatedtype`
-  package let declAssociatedType: sourcekitd_api_uid_t
+  public let declAssociatedType: sourcekitd_api_uid_t
   /// `source.lang.swift.ref.associatedtype`
-  package let refAssociatedType: sourcekitd_api_uid_t
+  public let refAssociatedType: sourcekitd_api_uid_t
   /// `source.lang.swift.decl.opaquetype`
-  package let declOpaqueType: sourcekitd_api_uid_t
+  public let declOpaqueType: sourcekitd_api_uid_t
   /// `source.lang.swift.ref.opaquetype`
-  package let refOpaqueType: sourcekitd_api_uid_t
+  public let refOpaqueType: sourcekitd_api_uid_t
   /// `source.lang.swift.decl.typealias`
-  package let declTypeAlias: sourcekitd_api_uid_t
+  public let declTypeAlias: sourcekitd_api_uid_t
   /// `source.lang.swift.ref.typealias`
-  package let refTypeAlias: sourcekitd_api_uid_t
+  public let refTypeAlias: sourcekitd_api_uid_t
   /// `source.lang.swift.decl.generic_type_param`
-  package let declGenericTypeParam: sourcekitd_api_uid_t
+  public let declGenericTypeParam: sourcekitd_api_uid_t
   /// `source.lang.swift.ref.generic_type_param`
-  package let refGenericTypeParam: sourcekitd_api_uid_t
+  public let refGenericTypeParam: sourcekitd_api_uid_t
   /// `source.lang.swift.decl.macro`
-  package let declMacro: sourcekitd_api_uid_t
+  public let declMacro: sourcekitd_api_uid_t
   /// `source.lang.swift.ref.macro`
-  package let refMacro: sourcekitd_api_uid_t
+  public let refMacro: sourcekitd_api_uid_t
   /// `source.lang.swift.ref.module`
-  package let refModule: sourcekitd_api_uid_t
+  public let refModule: sourcekitd_api_uid_t
   /// `source.lang.swift.commenttag`
-  package let commentTag: sourcekitd_api_uid_t
+  public let commentTag: sourcekitd_api_uid_t
   /// `source.lang.swift.stmt.foreach`
-  package let stmtForEach: sourcekitd_api_uid_t
+  public let stmtForEach: sourcekitd_api_uid_t
   /// `source.lang.swift.stmt.for`
-  package let stmtFor: sourcekitd_api_uid_t
+  public let stmtFor: sourcekitd_api_uid_t
   /// `source.lang.swift.stmt.while`
-  package let stmtWhile: sourcekitd_api_uid_t
+  public let stmtWhile: sourcekitd_api_uid_t
   /// `source.lang.swift.stmt.repeatwhile`
-  package let stmtRepeatWhile: sourcekitd_api_uid_t
+  public let stmtRepeatWhile: sourcekitd_api_uid_t
   /// `source.lang.swift.stmt.if`
-  package let stmtIf: sourcekitd_api_uid_t
+  public let stmtIf: sourcekitd_api_uid_t
   /// `source.lang.swift.stmt.guard`
-  package let stmtGuard: sourcekitd_api_uid_t
+  public let stmtGuard: sourcekitd_api_uid_t
   /// `source.lang.swift.stmt.switch`
-  package let stmtSwitch: sourcekitd_api_uid_t
+  public let stmtSwitch: sourcekitd_api_uid_t
   /// `source.lang.swift.stmt.case`
-  package let stmtCase: sourcekitd_api_uid_t
+  public let stmtCase: sourcekitd_api_uid_t
   /// `source.lang.swift.stmt.brace`
-  package let stmtBrace: sourcekitd_api_uid_t
+  public let stmtBrace: sourcekitd_api_uid_t
   /// `source.lang.swift.expr.call`
-  package let exprCall: sourcekitd_api_uid_t
+  public let exprCall: sourcekitd_api_uid_t
   /// `source.lang.swift.expr.argument`
-  package let exprArg: sourcekitd_api_uid_t
+  public let exprArg: sourcekitd_api_uid_t
   /// `source.lang.swift.expr.array`
-  package let exprArray: sourcekitd_api_uid_t
+  public let exprArray: sourcekitd_api_uid_t
   /// `source.lang.swift.expr.dictionary`
-  package let exprDictionary: sourcekitd_api_uid_t
+  public let exprDictionary: sourcekitd_api_uid_t
   /// `source.lang.swift.expr.object_literal`
-  package let exprObjectLiteral: sourcekitd_api_uid_t
+  public let exprObjectLiteral: sourcekitd_api_uid_t
   /// `source.lang.swift.expr.tuple`
-  package let exprTuple: sourcekitd_api_uid_t
+  public let exprTuple: sourcekitd_api_uid_t
   /// `source.lang.swift.expr.closure`
-  package let exprClosure: sourcekitd_api_uid_t
+  public let exprClosure: sourcekitd_api_uid_t
   /// `source.lang.swift.structure.elem.id`
-  package let structureElemId: sourcekitd_api_uid_t
+  public let structureElemId: sourcekitd_api_uid_t
   /// `source.lang.swift.structure.elem.expr`
-  package let structureElemExpr: sourcekitd_api_uid_t
+  public let structureElemExpr: sourcekitd_api_uid_t
   /// `source.lang.swift.structure.elem.init_expr`
-  package let structureElemInitExpr: sourcekitd_api_uid_t
+  public let structureElemInitExpr: sourcekitd_api_uid_t
   /// `source.lang.swift.structure.elem.condition_expr`
-  package let structureElemCondExpr: sourcekitd_api_uid_t
+  public let structureElemCondExpr: sourcekitd_api_uid_t
   /// `source.lang.swift.structure.elem.pattern`
-  package let structureElemPattern: sourcekitd_api_uid_t
+  public let structureElemPattern: sourcekitd_api_uid_t
   /// `source.lang.swift.structure.elem.typeref`
-  package let structureElemTypeRef: sourcekitd_api_uid_t
+  public let structureElemTypeRef: sourcekitd_api_uid_t
   /// `source.lang.swift.range.singlestatement`
-  package let rangeSingleStatement: sourcekitd_api_uid_t
+  public let rangeSingleStatement: sourcekitd_api_uid_t
   /// `source.lang.swift.range.singleexpression`
-  package let rangeSingleExpression: sourcekitd_api_uid_t
+  public let rangeSingleExpression: sourcekitd_api_uid_t
   /// `source.lang.swift.range.singledeclaration`
-  package let rangeSingleDeclaration: sourcekitd_api_uid_t
+  public let rangeSingleDeclaration: sourcekitd_api_uid_t
   /// `source.lang.swift.range.multistatement`
-  package let rangeMultiStatement: sourcekitd_api_uid_t
+  public let rangeMultiStatement: sourcekitd_api_uid_t
   /// `source.lang.swift.range.multitypememberdeclaration`
-  package let rangeMultiTypeMemberDeclaration: sourcekitd_api_uid_t
+  public let rangeMultiTypeMemberDeclaration: sourcekitd_api_uid_t
   /// `source.lang.swift.range.invalid`
-  package let rangeInvalid: sourcekitd_api_uid_t
+  public let rangeInvalid: sourcekitd_api_uid_t
   /// `source.lang.name.kind.objc`
-  package let nameObjc: sourcekitd_api_uid_t
+  public let nameObjc: sourcekitd_api_uid_t
   /// `source.lang.name.kind.swift`
-  package let nameSwift: sourcekitd_api_uid_t
+  public let nameSwift: sourcekitd_api_uid_t
   /// `source.lang.swift.syntaxtype.keyword`
-  package let keyword: sourcekitd_api_uid_t
+  public let keyword: sourcekitd_api_uid_t
   /// `source.lang.swift.syntaxtype.identifier`
-  package let identifier: sourcekitd_api_uid_t
+  public let identifier: sourcekitd_api_uid_t
   /// `source.lang.swift.syntaxtype.operator`
-  package let `operator`: sourcekitd_api_uid_t
+  public let `operator`: sourcekitd_api_uid_t
   /// `source.lang.swift.syntaxtype.typeidentifier`
-  package let typeIdentifier: sourcekitd_api_uid_t
+  public let typeIdentifier: sourcekitd_api_uid_t
   /// `source.lang.swift.syntaxtype.buildconfig.keyword`
-  package let buildConfigKeyword: sourcekitd_api_uid_t
+  public let buildConfigKeyword: sourcekitd_api_uid_t
   /// `source.lang.swift.syntaxtype.buildconfig.id`
-  package let buildConfigId: sourcekitd_api_uid_t
+  public let buildConfigId: sourcekitd_api_uid_t
   /// `source.lang.swift.syntaxtype.pounddirective.keyword`
-  package let poundDirectiveKeyword: sourcekitd_api_uid_t
+  public let poundDirectiveKeyword: sourcekitd_api_uid_t
   /// `source.lang.swift.syntaxtype.attribute.id`
-  package let attributeId: sourcekitd_api_uid_t
+  public let attributeId: sourcekitd_api_uid_t
   /// `source.lang.swift.syntaxtype.attribute.builtin`
-  package let attributeBuiltin: sourcekitd_api_uid_t
+  public let attributeBuiltin: sourcekitd_api_uid_t
   /// `source.lang.swift.syntaxtype.number`
-  package let number: sourcekitd_api_uid_t
+  public let number: sourcekitd_api_uid_t
   /// `source.lang.swift.syntaxtype.string`
-  package let string: sourcekitd_api_uid_t
+  public let string: sourcekitd_api_uid_t
   /// `source.lang.swift.syntaxtype.string_interpolation_anchor`
-  package let stringInterpolation: sourcekitd_api_uid_t
+  public let stringInterpolation: sourcekitd_api_uid_t
   /// `source.lang.swift.syntaxtype.comment`
-  package let comment: sourcekitd_api_uid_t
+  public let comment: sourcekitd_api_uid_t
   /// `source.lang.swift.syntaxtype.doccomment`
-  package let docComment: sourcekitd_api_uid_t
+  public let docComment: sourcekitd_api_uid_t
   /// `source.lang.swift.syntaxtype.doccomment.field`
-  package let docCommentField: sourcekitd_api_uid_t
+  public let docCommentField: sourcekitd_api_uid_t
   /// `source.lang.swift.syntaxtype.comment.mark`
-  package let commentMarker: sourcekitd_api_uid_t
+  public let commentMarker: sourcekitd_api_uid_t
   /// `source.lang.swift.syntaxtype.comment.url`
-  package let commentURL: sourcekitd_api_uid_t
+  public let commentURL: sourcekitd_api_uid_t
   /// `source.lang.swift.syntaxtype.placeholder`
-  package let placeholder: sourcekitd_api_uid_t
+  public let placeholder: sourcekitd_api_uid_t
   /// `source.lang.swift.syntaxtype.objectliteral`
-  package let objectLiteral: sourcekitd_api_uid_t
+  public let objectLiteral: sourcekitd_api_uid_t
   /// `source.lang.swift.expr`
-  package let expr: sourcekitd_api_uid_t
+  public let expr: sourcekitd_api_uid_t
   /// `source.lang.swift.stmt`
-  package let stmt: sourcekitd_api_uid_t
+  public let stmt: sourcekitd_api_uid_t
   /// `source.lang.swift.type`
-  package let type: sourcekitd_api_uid_t
+  public let type: sourcekitd_api_uid_t
   /// `source.lang.swift.foreach.sequence`
-  package let forEachSequence: sourcekitd_api_uid_t
+  public let forEachSequence: sourcekitd_api_uid_t
   /// `source.diagnostic.severity.note`
-  package let diagNote: sourcekitd_api_uid_t
+  public let diagNote: sourcekitd_api_uid_t
   /// `source.diagnostic.severity.warning`
-  package let diagWarning: sourcekitd_api_uid_t
+  public let diagWarning: sourcekitd_api_uid_t
   /// `source.diagnostic.severity.error`
-  package let diagError: sourcekitd_api_uid_t
+  public let diagError: sourcekitd_api_uid_t
   /// `source.diagnostic.category.deprecation`
-  package let diagDeprecation: sourcekitd_api_uid_t
+  public let diagDeprecation: sourcekitd_api_uid_t
   /// `source.diagnostic.category.no_usage`
-  package let diagNoUsage: sourcekitd_api_uid_t
+  public let diagNoUsage: sourcekitd_api_uid_t
   /// `source.codecompletion.everything`
-  package let codeCompletionEverything: sourcekitd_api_uid_t
+  public let codeCompletionEverything: sourcekitd_api_uid_t
   /// `source.codecompletion.module`
-  package let codeCompletionModule: sourcekitd_api_uid_t
+  public let codeCompletionModule: sourcekitd_api_uid_t
   /// `source.codecompletion.keyword`
-  package let codeCompletionKeyword: sourcekitd_api_uid_t
+  public let codeCompletionKeyword: sourcekitd_api_uid_t
   /// `source.codecompletion.literal`
-  package let codeCompletionLiteral: sourcekitd_api_uid_t
+  public let codeCompletionLiteral: sourcekitd_api_uid_t
   /// `source.codecompletion.custom`
-  package let codeCompletionCustom: sourcekitd_api_uid_t
+  public let codeCompletionCustom: sourcekitd_api_uid_t
   /// `source.codecompletion.identifier`
-  package let codeCompletionIdentifier: sourcekitd_api_uid_t
+  public let codeCompletionIdentifier: sourcekitd_api_uid_t
   /// `source.codecompletion.description`
-  package let codeCompletionDescription: sourcekitd_api_uid_t
+  public let codeCompletionDescription: sourcekitd_api_uid_t
   /// `source.edit.kind.active`
-  package let editActive: sourcekitd_api_uid_t
+  public let editActive: sourcekitd_api_uid_t
   /// `source.edit.kind.inactive`
-  package let editInactive: sourcekitd_api_uid_t
+  public let editInactive: sourcekitd_api_uid_t
   /// `source.edit.kind.selector`
-  package let editSelector: sourcekitd_api_uid_t
+  public let editSelector: sourcekitd_api_uid_t
   /// `source.edit.kind.string`
-  package let editString: sourcekitd_api_uid_t
+  public let editString: sourcekitd_api_uid_t
   /// `source.edit.kind.comment`
-  package let editComment: sourcekitd_api_uid_t
+  public let editComment: sourcekitd_api_uid_t
   /// `source.edit.kind.mismatch`
-  package let editMismatch: sourcekitd_api_uid_t
+  public let editMismatch: sourcekitd_api_uid_t
   /// `source.edit.kind.unknown`
-  package let editUnknown: sourcekitd_api_uid_t
+  public let editUnknown: sourcekitd_api_uid_t
   /// `source.refactoring.range.kind.basename`
-  package let renameRangeBase: sourcekitd_api_uid_t
+  public let renameRangeBase: sourcekitd_api_uid_t
   /// `source.refactoring.range.kind.keyword-basename`
-  package let renameRangeKeywordBase: sourcekitd_api_uid_t
+  public let renameRangeKeywordBase: sourcekitd_api_uid_t
   /// `source.refactoring.range.kind.parameter-and-whitespace`
-  package let renameRangeParam: sourcekitd_api_uid_t
+  public let renameRangeParam: sourcekitd_api_uid_t
   /// `source.refactoring.range.kind.noncollapsible-parameter`
-  package let renameRangeNoncollapsibleParam: sourcekitd_api_uid_t
+  public let renameRangeNoncollapsibleParam: sourcekitd_api_uid_t
   /// `source.refactoring.range.kind.decl-argument-label`
-  package let renameRangeDeclArgLabel: sourcekitd_api_uid_t
+  public let renameRangeDeclArgLabel: sourcekitd_api_uid_t
   /// `source.refactoring.range.kind.call-argument-label`
-  package let renameRangeCallArgLabel: sourcekitd_api_uid_t
+  public let renameRangeCallArgLabel: sourcekitd_api_uid_t
   /// `source.refactoring.range.kind.call-argument-colon`
-  package let renameRangeCallArgColon: sourcekitd_api_uid_t
+  public let renameRangeCallArgColon: sourcekitd_api_uid_t
   /// `source.refactoring.range.kind.call-argument-combined`
-  package let renameRangeCallArgCombined: sourcekitd_api_uid_t
+  public let renameRangeCallArgCombined: sourcekitd_api_uid_t
   /// `source.refactoring.range.kind.selector-argument-label`
-  package let renameRangeSelectorArgLabel: sourcekitd_api_uid_t
+  public let renameRangeSelectorArgLabel: sourcekitd_api_uid_t
   /// `source.syntacticrename.definition`
-  package let definition: sourcekitd_api_uid_t
+  public let definition: sourcekitd_api_uid_t
   /// `source.syntacticrename.reference`
-  package let reference: sourcekitd_api_uid_t
+  public let reference: sourcekitd_api_uid_t
   /// `source.syntacticrename.call`
-  package let call: sourcekitd_api_uid_t
+  public let call: sourcekitd_api_uid_t
   /// `source.syntacticrename.unknown`
-  package let unknown: sourcekitd_api_uid_t
+  public let unknown: sourcekitd_api_uid_t
   /// `source.statistic.num-requests`
-  package let statNumRequests: sourcekitd_api_uid_t
+  public let statNumRequests: sourcekitd_api_uid_t
   /// `source.statistic.num-semantic-requests`
-  package let statNumSemaRequests: sourcekitd_api_uid_t
+  public let statNumSemaRequests: sourcekitd_api_uid_t
   /// `source.statistic.instruction-count`
-  package let statInstructionCount: sourcekitd_api_uid_t
+  public let statInstructionCount: sourcekitd_api_uid_t
   /// `source.lang.swift`
-  package let swift: sourcekitd_api_uid_t
+  public let swift: sourcekitd_api_uid_t
   /// `source.lang.objc`
-  package let objC: sourcekitd_api_uid_t
+  public let objC: sourcekitd_api_uid_t
   /// `source.lang.swift.macro_role.expression`
-  package let macroRoleExpression: sourcekitd_api_uid_t
+  public let macroRoleExpression: sourcekitd_api_uid_t
   /// `source.lang.swift.macro_role.declaration`
-  package let macroRoleDeclaration: sourcekitd_api_uid_t
+  public let macroRoleDeclaration: sourcekitd_api_uid_t
   /// `source.lang.swift.macro_role.codeitem`
-  package let macroRoleCodeItem: sourcekitd_api_uid_t
+  public let macroRoleCodeItem: sourcekitd_api_uid_t
   /// `source.lang.swift.macro_role.accessor`
-  package let macroRoleAccessor: sourcekitd_api_uid_t
+  public let macroRoleAccessor: sourcekitd_api_uid_t
   /// `source.lang.swift.macro_role.member_attribute`
-  package let macroRoleMemberAttribute: sourcekitd_api_uid_t
+  public let macroRoleMemberAttribute: sourcekitd_api_uid_t
   /// `source.lang.swift.macro_role.member`
-  package let macroRoleMember: sourcekitd_api_uid_t
+  public let macroRoleMember: sourcekitd_api_uid_t
   /// `source.lang.swift.macro_role.peer`
-  package let macroRolePeer: sourcekitd_api_uid_t
+  public let macroRolePeer: sourcekitd_api_uid_t
   /// `source.lang.swift.macro_role.conformance`
-  package let macroRoleConformance: sourcekitd_api_uid_t
+  public let macroRoleConformance: sourcekitd_api_uid_t
   /// `source.lang.swift.macro_role.extension`
-  package let macroRoleExtension: sourcekitd_api_uid_t
+  public let macroRoleExtension: sourcekitd_api_uid_t
   /// `source.lang.swift.macro_role.preamble`
-  package let macroRolePreamble: sourcekitd_api_uid_t
+  public let macroRolePreamble: sourcekitd_api_uid_t
   /// `source.lang.swift.macro_role.body`
-  package let macroRoleBody: sourcekitd_api_uid_t
+  public let macroRoleBody: sourcekitd_api_uid_t
   /// `source.lang.swift.keyword`
-  package let completionKindKeyword: sourcekitd_api_uid_t
+  public let completionKindKeyword: sourcekitd_api_uid_t
   /// `source.lang.swift.pattern`
-  package let completionKindPattern: sourcekitd_api_uid_t
+  public let completionKindPattern: sourcekitd_api_uid_t
   /// `source.diagnostic.stage.swift.sema`
-  package let semaDiagStage: sourcekitd_api_uid_t
+  public let semaDiagStage: sourcekitd_api_uid_t
   /// `source.diagnostic.stage.swift.parse`
-  package let parseDiagStage: sourcekitd_api_uid_t
+  public let parseDiagStage: sourcekitd_api_uid_t
   /// `source.notification.sema_disabled`
-  package let semaDisabledNotification: sourcekitd_api_uid_t
+  public let semaDisabledNotification: sourcekitd_api_uid_t
   /// `source.notification.sema_enabled`
-  package let semaEnabledNotification: sourcekitd_api_uid_t
+  public let semaEnabledNotification: sourcekitd_api_uid_t
   /// `source.notification.editor.documentupdate`
-  package let documentUpdateNotification: sourcekitd_api_uid_t
+  public let documentUpdateNotification: sourcekitd_api_uid_t
   /// `source.diagnostic.severity.remark`
-  package let diagRemark: sourcekitd_api_uid_t
+  public let diagRemark: sourcekitd_api_uid_t
 
-  package init(api: sourcekitd_api_functions_t) {
+  public init(api: sourcekitd_api_functions_t) {
     declFunctionFree = api.uid_get_from_cstr("source.lang.swift.decl.function.free")!
     refFunctionFree = api.uid_get_from_cstr("source.lang.swift.ref.function.free")!
     declMethodInstance = api.uid_get_from_cstr("source.lang.swift.decl.function.method.instance")!

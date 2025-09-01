@@ -10,8 +10,8 @@
 //
 //===----------------------------------------------------------------------===//
 
-package import Csourcekitd
-import SKLogging
+public import Csourcekitd
+public import SKLogging
 
 #if canImport(Darwin)
 import Darwin
@@ -25,7 +25,7 @@ import CRT
 import Bionic
 #endif
 
-package final class SKDResponse: Sendable {
+public final class SKDResponse: Sendable {
   private nonisolated(unsafe) let response: sourcekitd_api_response_t
   let sourcekitd: SourceKitD
 
@@ -33,7 +33,7 @@ package final class SKDResponse: Sendable {
   ///
   /// - Important: When this `SKDResponse` object gets destroyed, it will dispose the response. It is thus illegal to
   ///   have two `SDKResponse` objects managing the same `sourcekitd_api_response_t`.
-  package init(_ response: sourcekitd_api_response_t, sourcekitd: SourceKitD) {
+  public init(_ response: sourcekitd_api_response_t, sourcekitd: SourceKitD) {
     self.response = response
     self.sourcekitd = sourcekitd
   }
@@ -42,7 +42,7 @@ package final class SKDResponse: Sendable {
     sourcekitd.api.response_dispose(response)
   }
 
-  package var error: SKDError? {
+  public var error: SKDError? {
     if !sourcekitd.api.response_is_error(response) {
       return nil
     }
@@ -55,7 +55,7 @@ package final class SKDResponse: Sendable {
     }
   }
 
-  package var value: SKDResponseDictionary? {
+  public var value: SKDResponseDictionary? {
     if sourcekitd.api.response_is_error(response) {
       return nil
     }
@@ -64,7 +64,7 @@ package final class SKDResponse: Sendable {
 }
 
 extension SKDResponse: CustomStringConvertible {
-  package var description: String {
+  public var description: String {
     let ptr = sourcekitd.api.response_description_copy(response)!
     defer { free(ptr) }
     return String(cString: ptr)
@@ -72,7 +72,7 @@ extension SKDResponse: CustomStringConvertible {
 }
 
 extension SKDResponse: CustomLogStringConvertible {
-  package var redactedDescription: String {
+  public var redactedDescription: String {
     // TODO: Implement a better redacted log that contains keys, number of
     // elements in an array but not the data itself.
     // (https://github.com/swiftlang/sourcekit-lsp/issues/1598)

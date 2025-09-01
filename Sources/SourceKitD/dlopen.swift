@@ -26,7 +26,7 @@ import Musl
 import Android
 #endif
 
-package final class DLHandle: Sendable {
+public final class DLHandle: Sendable {
   fileprivate struct Handle: @unchecked Sendable {
     #if os(Windows)
     let handle: HMODULE
@@ -52,7 +52,7 @@ package final class DLHandle: Sendable {
   }
 
   /// The handle must not be used anymore after calling `close`.
-  package func close() throws {
+  public func close() throws {
     try rawValue.withLock { rawValue in
       if let handle = rawValue {
         #if os(Windows)
@@ -70,12 +70,12 @@ package final class DLHandle: Sendable {
   }
 
   /// The handle must not be used anymore after calling `leak`.
-  package func leak() {
+  public func leak() {
     rawValue.value = nil
   }
 }
 
-package struct DLOpenFlags: RawRepresentable, OptionSet, Sendable {
+public struct DLOpenFlags: RawRepresentable, OptionSet, Sendable {
 
   #if !os(Windows)
   package static let lazy: DLOpenFlags = DLOpenFlags(rawValue: RTLD_LAZY)
@@ -91,19 +91,19 @@ package struct DLOpenFlags: RawRepresentable, OptionSet, Sendable {
   #endif
   #endif
 
-  package var rawValue: Int32
+  public var rawValue: Int32
 
-  package init(rawValue: Int32) {
+  public init(rawValue: Int32) {
     self.rawValue = rawValue
   }
 }
 
-package enum DLError: Swift.Error {
+public enum DLError: Swift.Error {
   case `open`(String)
   case close(String)
 }
 
-package func dlopen(_ path: String?, mode: DLOpenFlags) throws -> DLHandle {
+public func dlopen(_ path: String?, mode: DLOpenFlags) throws -> DLHandle {
   #if os(Windows)
   guard let handle = path?.withCString(encodedAs: UTF16.self, LoadLibraryW) else {
     throw DLError.open("LoadLibraryW failed: \(GetLastError())")
@@ -116,7 +116,7 @@ package func dlopen(_ path: String?, mode: DLOpenFlags) throws -> DLHandle {
   return DLHandle(rawValue: DLHandle.Handle(handle: handle))
 }
 
-package func dlsym<T>(_ handle: DLHandle, symbol: String) -> T? {
+public func dlsym<T>(_ handle: DLHandle, symbol: String) -> T? {
   #if os(Windows)
   guard let ptr = GetProcAddress(handle.rawValue.value!.handle, symbol) else {
     return nil
@@ -129,12 +129,12 @@ package func dlsym<T>(_ handle: DLHandle, symbol: String) -> T? {
   return unsafeBitCast(ptr, to: T.self)
 }
 
-package func dlclose(_ handle: DLHandle) throws {
+public func dlclose(_ handle: DLHandle) throws {
   try handle.close()
 }
 
 #if !os(Windows)
-package func dlerror() -> String? {
+public func dlerror() -> String? {
   if let err: UnsafeMutablePointer<Int8> = dlerror() {
     return String(cString: err)
   }
