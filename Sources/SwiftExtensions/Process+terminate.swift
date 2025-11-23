@@ -14,6 +14,7 @@ package import Foundation
 
 extension Foundation.Process {
   /// If the process has not exited after `duration`, terminate it.
+  @available(macOS 13.0, *)
   package func terminateIfRunning(after duration: Duration, pollInterval: Duration = .milliseconds(5)) async throws {
     for _ in 0..<Int(duration.seconds / pollInterval.seconds) {
       if !self.isRunning {

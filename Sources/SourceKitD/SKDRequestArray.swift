@@ -24,6 +24,7 @@ import CRT
 import Bionic
 #endif
 
+@available(macOS 13.0, *)
 extension SourceKitD {
   /// Create a `SKDRequestArray` from the given array.
   nonisolated public func array(_ array: [SKDRequestValue]) -> SKDRequestArray {
@@ -35,6 +36,7 @@ extension SourceKitD {
   }
 }
 
+@available(macOS 13.0, *)
 public final class SKDRequestArray: Sendable {
   nonisolated(unsafe) let array: sourcekitd_api_object_t
   private let sourcekitd: SourceKitD
@@ -80,6 +82,7 @@ public final class SKDRequestArray: Sendable {
   }
 }
 
+@available(macOS 13.0, *)
 extension SKDRequestArray: CustomStringConvertible {
   public var description: String {
     let ptr = sourcekitd.api.request_description_copy(array)!

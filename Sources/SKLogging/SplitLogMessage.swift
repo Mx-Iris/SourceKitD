@@ -36,6 +36,7 @@ package func splitLongMultilineMessage(message: String) -> [String] {
   return chunks
 }
 
+@available(macOS 11.0, *)
 extension Logger {
   /// Implementation detail of `logFullObjectInMultipleLogMessages`
   private struct LoggableChunk: CustomLogStringConvertible {

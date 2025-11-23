@@ -24,6 +24,7 @@ import CRT
 import Bionic
 #endif
 
+@available(macOS 13.0, *)
 public final class SKDResponseArray: Sendable {
   private let array: sourcekitd_api_variant_t
   private let resp: SKDResponse
@@ -99,6 +100,7 @@ public final class SKDResponseArray: Sendable {
   }
 }
 
+@available(macOS 13.0, *)
 extension SKDResponseArray: CustomStringConvertible {
   public var description: String {
     let ptr = sourcekitd.api.variant_description_copy(array)!

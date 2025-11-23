@@ -14,6 +14,7 @@
 import os
 #endif
 
+@available(macOS 11.0, *)
 private func logError(prefix: String, error: Error, level: LogLevel = .error) {
   logger.log(
     level: level,
@@ -22,6 +23,7 @@ private func logError(prefix: String, error: Error, level: LogLevel = .error) {
 }
 
 /// Like `try?`, but logs the error on failure.
+@available(macOS 11.0, *)
 package func orLog<R>(
   _ prefix: @autoclosure () -> String,
   level: LogLevel = .error,
@@ -38,6 +40,7 @@ package func orLog<R>(
 /// Like  ``orLog(_:level:_:)-66i2z`` but allows execution of an `async` body.
 ///
 /// - SeeAlso: ``orLog(_:level:_:)-66i2z``
+@available(macOS 11.0, *)
 package func orLog<R>(
   _ prefix: @autoclosure () -> String,
   level: LogLevel = .error,

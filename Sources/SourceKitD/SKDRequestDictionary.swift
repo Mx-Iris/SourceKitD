@@ -36,12 +36,15 @@ public protocol SKDRequestValue {}
 extension String: SKDRequestValue {}
 extension Int: SKDRequestValue {}
 extension sourcekitd_api_uid_t: SKDRequestValue {}
+@available(macOS 13.0, *)
 extension SKDRequestDictionary: SKDRequestValue {}
+@available(macOS 13.0, *)
 extension SKDRequestArray: SKDRequestValue {}
 extension Array<SKDRequestValue>: SKDRequestValue {}
 extension Dictionary<sourcekitd_api_uid_t, SKDRequestValue>: SKDRequestValue {}
 extension Optional: SKDRequestValue where Wrapped: SKDRequestValue {}
 
+@available(macOS 13.0, *)
 extension SourceKitD {
   /// Create a `SKDRequestDictionary` from the given dictionary.
   nonisolated public func dictionary(_ dict: [sourcekitd_api_uid_t: SKDRequestValue]) -> SKDRequestDictionary {
@@ -53,6 +56,7 @@ extension SourceKitD {
   }
 }
 
+@available(macOS 13.0, *)
 public final class SKDRequestDictionary: Sendable {
   nonisolated(unsafe) let dict: sourcekitd_api_object_t
   private let sourcekitd: SourceKitD
@@ -92,6 +96,7 @@ public final class SKDRequestDictionary: Sendable {
   }
 }
 
+@available(macOS 13.0, *)
 extension SKDRequestDictionary: CustomStringConvertible {
   public var description: String {
     let ptr = sourcekitd.api.request_description_copy(dict)!
@@ -100,6 +105,7 @@ extension SKDRequestDictionary: CustomStringConvertible {
   }
 }
 
+@available(macOS 13.0, *)
 extension SKDRequestDictionary: CustomLogStringConvertible {
   public var redactedDescription: String {
     // TODO: Implement a better redacted log that contains keys, number of

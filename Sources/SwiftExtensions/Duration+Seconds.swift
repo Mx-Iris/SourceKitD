@@ -10,6 +10,7 @@
 //
 //===----------------------------------------------------------------------===//
 
+@available(macOS 13.0, *)
 extension Duration {
   package var seconds: Double {
     return Double(self.components.attoseconds) / 1_000_000_000_000_000_000 + Double(self.components.seconds)

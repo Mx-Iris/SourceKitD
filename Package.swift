@@ -15,7 +15,7 @@ var globalSwiftSettings: [SwiftSetting] {
 let package = Package(
     name: "SourceKitD",
     platforms: [
-        .macOS(.v13)
+        .macOS(.v10_15)
     ],
     products: [
         .library(

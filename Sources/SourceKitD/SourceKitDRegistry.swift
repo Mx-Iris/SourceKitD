@@ -24,6 +24,7 @@ import SKLogging
 ///   the same path. See note on `remove(_:)`
 ///
 /// `SourceKitDType` is usually `SourceKitD` but can be substituted for a different type for testing purposes.
+@available(macOS 11.0, *)
 public actor SourceKitDRegistry<SourceKitDType: AnyObject> {
 
   /// Mapping from path to active SourceKitD instance.
@@ -81,6 +82,7 @@ public actor SourceKitDRegistry<SourceKitDType: AnyObject> {
   }
 }
 
+@available(macOS 13.0, *)
 extension SourceKitDRegistry<SourceKitD> {
   /// The global shared SourceKitD registry.
   public static let shared: SourceKitDRegistry = SourceKitDRegistry()

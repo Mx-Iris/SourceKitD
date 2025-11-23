@@ -47,7 +47,11 @@ public final class DLHandle: Sendable {
 
   deinit {
     if rawValue.value != nil {
-      logger.fault("DLHandle must be closed or explicitly leaked before destroying")
+        if #available(macOS 11.0, *) {
+            logger.fault("DLHandle must be closed or explicitly leaked before destroying")
+        } else {
+            // Fallback on earlier versions
+        }
     }
   }
 

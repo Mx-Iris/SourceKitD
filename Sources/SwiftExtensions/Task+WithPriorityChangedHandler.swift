@@ -16,6 +16,7 @@
 /// `pollingInterval`.
 /// The function assumes that the original priority of the task is `initialPriority`. If the task priority changed
 /// compared to `initialPriority`, the `taskPriorityChanged` will be called.
+@available(macOS 13.0, *)
 package func withTaskPriorityChangedHandler<T: Sendable>(
   initialPriority: TaskPriority = Task.currentPriority,
   pollingInterval: Duration = .seconds(0.1),

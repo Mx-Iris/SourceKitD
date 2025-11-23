@@ -25,6 +25,7 @@ import CRT
 import Bionic
 #endif
 
+@available(macOS 13.0, *)
 public final class SKDResponse: Sendable {
   private nonisolated(unsafe) let response: sourcekitd_api_response_t
   let sourcekitd: SourceKitD
@@ -63,6 +64,7 @@ public final class SKDResponse: Sendable {
   }
 }
 
+@available(macOS 13.0, *)
 extension SKDResponse: CustomStringConvertible {
   public var description: String {
     let ptr = sourcekitd.api.response_description_copy(response)!
@@ -71,6 +73,7 @@ extension SKDResponse: CustomStringConvertible {
   }
 }
 
+@available(macOS 13.0, *)
 extension SKDResponse: CustomLogStringConvertible {
   public var redactedDescription: String {
     // TODO: Implement a better redacted log that contains keys, number of

@@ -98,6 +98,7 @@ public enum SKDError: Error, Equatable {
 ///
 /// Users of this class should not call the api functions `initialize`, `shutdown`, or
 /// `set_notification_handler`, which are global state managed internally by this class.
+@available(macOS 13.0, *)
 public actor SourceKitD {
   /// The path to the sourcekitd dylib.
   public let path: URL
@@ -481,10 +482,12 @@ public actor SourceKitD {
 }
 
 /// A sourcekitd notification handler in a class to allow it to be uniquely referenced.
+@available(macOS 13.0, *)
 public protocol SKDNotificationHandler: AnyObject, Sendable {
   func notification(_: SKDResponse)
 }
 
+@available(macOS 13.0, *)
 struct WeakSKDNotificationHandler: Sendable {
   weak private(set) var value: SKDNotificationHandler?
   init(_ value: SKDNotificationHandler) {

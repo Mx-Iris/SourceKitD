@@ -16,15 +16,21 @@ import Foundation
 @_exported public import os  // os_log
 
 package typealias LogLevel = os.OSLogType
+@available(macOS 11.0, *)
 package typealias Logger = os.Logger
+@available(macOS 12.0, *)
 package typealias Signposter = OSSignposter
 
+@available(macOS 12.0, *)
 extension OSSignposter: @retroactive @unchecked Sendable {}
-extension OSSignpostID: @retroactive @unchecked Sendable {}
+//extension OSSignpostID: @retroactive @unchecked Sendable {}
+@available(macOS 12.0, *)
 extension OSSignpostIntervalState: @retroactive @unchecked Sendable {}
 
+@available(macOS 11.0, *)
 extension os.Logger {
-  package func makeSignposter() -> Signposter {
+    @available(macOS 12.0, *)
+    package func makeSignposter() -> Signposter {
     return OSSignposter(logger: self)
   }
 }
@@ -35,6 +41,7 @@ package typealias Signposter = NonDarwinSignposter
 #endif
 
 /// The logger that is used to log any messages.
+@available(macOS 11.0, *)
 package var logger: Logger {
     #if LOGGING
     Logger(subsystem: LoggingScope.subsystem, category: LoggingScope.scope)
